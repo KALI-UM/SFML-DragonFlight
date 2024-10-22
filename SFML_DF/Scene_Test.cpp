@@ -21,6 +21,9 @@ Scene_Test::~Scene_Test()
 
 bool Scene_Test::Initialize()
 {
+<<<<<<< HEAD
+
+=======
 	m_Player = new Character();
 	m_Monster = new Monster();
 	m_Score = new Score();
@@ -29,10 +32,15 @@ bool Scene_Test::Initialize()
 	m_GameObjects.push_back(m_Score);
 	
 	SceneBase::Initialize();
+>>>>>>> origin/master
 	return true;
 }
 
 void Scene_Test::Update(float dt)
 {
+<<<<<<< HEAD
+	
+=======
 	SceneBase::Update(dt);
+>>>>>>> origin/master
 }

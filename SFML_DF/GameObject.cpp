@@ -22,14 +22,15 @@ GameObject::GameObject(GameObject&& other)noexcept
 	:m_Id(other.m_Id), m_IsValid(other.m_IsValid), m_Drawable(other.m_Drawable)
 {
 	//미완
-	other.m_Drawable = nullptr;
+	other.m_Drawable.clear();
 	other.SetIsValid(false);
 }
 
 GameObject::~GameObject()
 {
 	m_GameObjectsCount--;
-	delete m_Drawable;
+	for (auto& drawable : m_Drawable)
+		delete drawable;
 }
 
 bool GameObject::Initialize()
@@ -58,16 +59,33 @@ bool GameObject::GetIsValid() const
 
 bool GameObject::GetIsVisible() const
 {
+	//0번째가 보이면 보이는거다..? 좀 이상해짐..ㅠ
 	return GetIsValid() && GetDrawable() && GetDrawable()->GetIsVisible();
 }
 
-DrawableObject* GameObject::GetDrawable()const
+DrawableObject* GameObject::GetDrawable(size_t index)const
 {
-	return m_Drawable;
+	if (index >= m_Drawable.size())return nullptr;
+	return m_Drawable[index];
+}
+
+DrawableObject* GameObject::GetDrawable(const std::string& name) const
+{
+	for (auto& drawable : m_Drawable)
+	{
+		if (drawable->GetName() == name)
+			return drawable;
+	}
+	return nullptr;
 }
 
 void GameObject::SetDrawable(DrawableObject* dobj)
 {
-	m_Drawable = dobj;
+	m_Drawable.push_back(dobj);
+}
+
+int GameObject::GetDrawbleCount() const
+{
+	return m_Drawable.size();
 }
 

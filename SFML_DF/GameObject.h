@@ -19,15 +19,20 @@ public:
 	bool GetIsVisible()const;
 
 	
-	DrawableObject* GetDrawable() const;
+	DrawableObject* GetDrawable(size_t index=0) const;
+	DrawableObject* GetDrawable(const std::string& name) const;
 	void SetDrawable(DrawableObject* dobj);
+<<<<<<< HEAD
+	int GetDrawbleCount()const;
+=======
 	
+>>>>>>> origin/master
 
 private:
 	const int	m_Id;
 	bool		m_IsValid;
 
-	DrawableObject* m_Drawable = nullptr;
+	std::vector<DrawableObject*> m_Drawable;
 
 	static int m_GameObjectsCount;
 	static int m_IdNumber;

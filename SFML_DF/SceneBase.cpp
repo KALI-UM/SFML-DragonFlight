@@ -39,9 +39,10 @@ void SceneBase::PushToDrawQue()
 {
 	for (GameObject*& gobj : m_GameObjects)
 	{
-		if (gobj->GetIsVisible())
+		if (gobj->GetIsValid())//visible수정 나중에 다시
 		{
-			GameManager::GetInstance()->PushDrawableObject(gobj->GetDrawable());
+			for(int i=0; i< gobj->GetDrawbleCount(); i++)
+			GameManager::GetInstance()->PushDrawableObject(gobj->GetDrawable(i));
 		}
 	}
 }
