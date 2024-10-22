@@ -2,6 +2,8 @@
 #include "SceneBase.h"
 
 class Character;
+class Monster;
+class Score;
 class Scene_Test 
 	:public SceneBase
 {
@@ -13,5 +15,7 @@ public:
 	void Update(float dt)override;
 
 	Character* m_Player;
+	Monster* m_Monster;
+	Score* m_Score;
 };
 

@@ -22,6 +22,7 @@ void Character::Reset()
 {
     m_CharSprite->SetOriginCenter();
     m_CharSprite->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, GM->GetWindow()->getSize().y-150);
+    m_CharSprite->Transform()->setScale(0.5f, 0.5f);
     m_speed = 300;
 }
 
@@ -35,4 +36,9 @@ void Character::Update(float dt)
     {
         GetDrawable()->Transform()->setPosition(GetDrawable()->Transform()->getPosition().x + m_speed * dt, GetDrawable()->Transform()->getPosition().y);
     }
+}
+
+void Character::getMonster(Monster* mons)
+{
+    
 }
