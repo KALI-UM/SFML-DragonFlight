@@ -11,6 +11,7 @@ public:
 	bool operator==(const GameObject& rhs);
 
 	virtual bool Initialize();
+	virtual void Reset();
 	virtual void Update(float dt);
 
 	void SetIsValid(bool value);
@@ -21,7 +22,11 @@ public:
 	DrawableObject* GetDrawable(size_t index=0) const;
 	DrawableObject* GetDrawable(const std::string& name) const;
 	void SetDrawable(DrawableObject* dobj);
+<<<<<<< HEAD
 	int GetDrawbleCount()const;
+=======
+	
+>>>>>>> origin/master
 
 private:
 	const int	m_Id;

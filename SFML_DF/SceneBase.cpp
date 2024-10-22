@@ -16,11 +16,19 @@ SceneBase::~SceneBase()
 
 bool SceneBase::Initialize()
 {
-	return false;
+	for (auto& gobj : m_GameObjects)
+	{
+		gobj->Initialize();
+	}
+	return true;
 }
 
 void SceneBase::Update(float dt)
 {
+	for (auto& gobj : m_GameObjects)
+	{
+		gobj->Update(dt);
+	}
 }
 
 void SceneBase::SetInitialState()

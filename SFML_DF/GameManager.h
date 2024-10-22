@@ -47,3 +47,6 @@ private:
 	SceneManager* const						m_SceneManager;
 };
 
+#define GM (GameManager::GetInstance())
+#define IM (InputManager::GetInstance())
+#define SM (SceneManager::GetInstance())
