@@ -47,6 +47,9 @@ public:
 	sf::Drawable* GetDrawable()const { return m_Drawable; }
 	sf::Transformable* Transform() { return m_Transform; }
 
+	std::string GetName()const { return m_Name; }
+	void SetName(const std::string& name) { m_Name = name; }
+
 	virtual sf::Color GetColor() const = 0;
 	virtual void SetColor(const sf::Color& color) = 0;
 	virtual void SetColor(int r, int g, int b, int a = 255) = 0;
@@ -78,4 +81,5 @@ protected:
 	sf::Drawable* m_Drawable;
 	sf::Transformable* m_Transform;
 	bool m_IsValid;
+	std::string m_Name;
 };
