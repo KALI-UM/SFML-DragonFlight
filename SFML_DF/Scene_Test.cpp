@@ -21,26 +21,22 @@ Scene_Test::~Scene_Test()
 
 bool Scene_Test::Initialize()
 {
-<<<<<<< HEAD
 
-=======
 	m_Player = new Character();
 	m_Monster = new Monster();
 	m_Score = new Score();
+	m_Player->getMonster(m_Monster);
 	m_GameObjects.push_back(m_Player);
 	m_GameObjects.push_back(m_Monster);
 	m_GameObjects.push_back(m_Score);
 	
 	SceneBase::Initialize();
->>>>>>> origin/master
+
 	return true;
 }
 
 void Scene_Test::Update(float dt)
 {
-<<<<<<< HEAD
-	
-=======
 	SceneBase::Update(dt);
->>>>>>> origin/master
+
 }

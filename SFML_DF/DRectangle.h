@@ -17,6 +17,7 @@ public:
 
 	void SetSize(const sf::Vector2f& widthheight);
 	sf::FloatRect GetFRect()const;
+	void SetFRect(const sf::FloatRect& frect);
 	sf::Vector2f GetPoint(size_t index) const;
 private:
 	sf::RectangleShape m_Rectangle;

@@ -85,6 +85,13 @@ sf::FloatRect DRectangle::GetFRect() const
 	return m_FloatRect;
 }
 
+void DRectangle::SetFRect(const sf::FloatRect& frect)
+{
+	m_Rectangle.setPosition(frect.getPosition());
+	SetSize(frect.getSize());
+	m_FloatRect = frect;
+}
+
 sf::Vector2f DRectangle::GetPoint(size_t index) const
 {
 	return m_Rectangle.getPoint(index);

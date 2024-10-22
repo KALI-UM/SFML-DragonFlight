@@ -3,6 +3,7 @@
 
 
 class DSprite;
+class DRectangle;
 class Monster;
 class Character : public GameObject
 {
@@ -17,9 +18,11 @@ public:
 	void getMonster(Monster* mons);
 
 	DSprite* m_CharSprite;
+	DRectangle* m_HitBox;
 
 protected:
 	float m_speed;
+	Monster* m_Enemy;
 
 };
 
