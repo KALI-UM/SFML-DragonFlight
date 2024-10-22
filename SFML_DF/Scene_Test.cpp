@@ -47,9 +47,11 @@ bool Scene_Test::Initialize()
 	DText* text = new DText(sf::Vector2f(500, 500), "resource/KOMIKAP_.ttf", "rdfssf", 50, DrawType::Debug);
 	obj6->SetDrawable(text);
 	sf::Vector2f vectors[] = { {0,0}, {800,800}, {100,100} };
-DLine* line = new DLine(vectors, 3, sf::Color::Green, 1, DrawType::Debug);
+	DLine* line = new DLine(vectors, 3, sf::Color::Green, 1, DrawType::Debug);
 	//DLine* line = new DLine(sf::Vector2f(100,100), sf::Vector2f(0, 0), sf::Color::Green, 10, DrawType::Debug);
 	obj7->SetDrawable(line);
+
+
 
 	//m_GameObjects.push_back(obj1);
 	//m_GameObjects.push_back(obj2);

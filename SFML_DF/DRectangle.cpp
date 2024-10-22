@@ -48,3 +48,8 @@ void DRectangle::SetSize(const sf::Vector2f& widthheight)
 	m_Rectangle.setSize(widthheight);
 }
 
+sf::Vector2f DRectangle::GetPoint(size_t index) const
+{
+	m_Rectangle.getPoint(index);
+}
+

@@ -13,6 +13,7 @@ public:
 	virtual ~DRectangle();
 
 	void SetSize(const sf::Vector2f& widthheight);
+	sf::Vector2f GetPoint(size_t index) const;
 private:
 	sf::RectangleShape m_Rectangle;
 };
