@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AABB.cpp" />
     <ClCompile Include="DAnimation.cpp" />
     <ClCompile Include="DCircle.cpp" />
     <ClCompile Include="DLine.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Scene_Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABB.h" />
     <ClInclude Include="DAnimation.h" />
     <ClInclude Include="DCircle.h" />
     <ClInclude Include="DLine.h" />

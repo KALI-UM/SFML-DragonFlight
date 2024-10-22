@@ -12,13 +12,8 @@ public:
 	bool Initialize() override;
 	void Update(float dt)override;
 
-	GameObject* obj1;
-	GameObject* obj2;
-	GameObject* obj3;
-	GameObject* obj4;
-	GameObject* obj5;
-	GameObject* obj6;
-	GameObject* obj7;
+	GameObject* rect1;
+	GameObject* rect2;
 
 };
 
