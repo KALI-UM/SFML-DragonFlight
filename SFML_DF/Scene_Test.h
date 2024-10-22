@@ -1,7 +1,7 @@
 #pragma once
 #include "SceneBase.h"
 
-
+class Character;
 class Scene_Test 
 	:public SceneBase
 {
@@ -12,8 +12,6 @@ public:
 	bool Initialize() override;
 	void Update(float dt)override;
 
-	GameObject* rect1;
-	GameObject* rect2;
-
+	Character* m_Player;
 };
 

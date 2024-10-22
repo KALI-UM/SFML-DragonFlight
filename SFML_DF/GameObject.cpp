@@ -37,6 +37,10 @@ bool GameObject::Initialize()
 	return false;
 }
 
+void GameObject::Reset()
+{
+}
+
 void GameObject::Update(float dt)
 {
 

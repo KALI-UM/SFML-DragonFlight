@@ -8,7 +8,7 @@
 int main()
 {
 
-	sf::RenderWindow window(sf::VideoMode(1920, 1050), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(540, 960), "SFML works!");
 	GameManager::GetInstance()->Initialize(&window);
 
 

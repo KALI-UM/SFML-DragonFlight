@@ -50,6 +50,6 @@ void DRectangle::SetSize(const sf::Vector2f& widthheight)
 
 sf::Vector2f DRectangle::GetPoint(size_t index) const
 {
-	m_Rectangle.getPoint(index);
+	return m_Rectangle.getPoint(index);
 }
 
