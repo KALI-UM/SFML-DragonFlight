@@ -14,24 +14,41 @@ SceneBase::~SceneBase()
 	}
 }
 
-bool SceneBase::Initialize()
+bool SceneBase::INITIALIZE()
 {
+	bool result = Initialize();
 	for (auto& gobj : m_GameObjects)
 	{
-		gobj->Initialize();
+		result &= gobj->Initialize();
 	}
-	return true;
+	RESET();
+	return result;
 }
 
-void SceneBase::Update(float dt)
+void SceneBase::RESET()
 {
+	Reset();
+}
+
+void SceneBase::UPDATE(float dt)
+{
+	Update(dt);
 	for (auto& gobj : m_GameObjects)
 	{
 		gobj->Update(dt);
 	}
 }
 
-void SceneBase::SetInitialState()
+bool SceneBase::Initialize()
+{
+	return true;
+}
+
+void SceneBase::Reset()
+{
+}
+
+void SceneBase::Update(float dt)
 {
 }
 
@@ -39,10 +56,13 @@ void SceneBase::PushToDrawQue()
 {
 	for (GameObject*& gobj : m_GameObjects)
 	{
-		if (gobj->GetIsValid())//visible수정 나중에 다시
+		if (gobj->GetIsValid())
 		{
-			for(int i=0; i< gobj->GetDrawbleCount(); i++)
-			GameManager::GetInstance()->PushDrawableObject(gobj->GetDrawable(i));
+			for (int i = 0; i < gobj->GetDrawbleCount(); i++)
+			{
+				if (gobj->GetIsVisible(i))
+					GameManager::GetInstance()->PushDrawableObject(gobj->GetDrawable(i));
+			}
 		}
 	}
 }

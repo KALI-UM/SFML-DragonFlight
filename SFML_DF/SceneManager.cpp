@@ -9,7 +9,7 @@ bool SceneManager::Initialize()
 
 void SceneManager::Update(float dt)
 {
-    m_Scenes[m_CurrSceneIndex]->Update(dt);
+    m_Scenes[m_CurrSceneIndex]->UPDATE(dt);
 }
 
 void SceneManager::PushToDrawQue()
@@ -29,6 +29,6 @@ void SceneManager::SetCurrentSceneIndex(int index)
 
 void SceneManager::PushScene(SceneBase* scene)
 {
-    scene->Initialize();
+    scene->INITIALIZE();
     m_Scenes.push_back(scene);
 }

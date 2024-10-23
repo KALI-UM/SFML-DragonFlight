@@ -10,13 +10,17 @@ public:
 	//SceneBase(SceneBase&& other);
 	virtual ~SceneBase();
 
-	virtual bool Initialize();
-	virtual void Update(float dt);
-
-	virtual void SetInitialState();
+	bool INITIALIZE();
+	void RESET();
+	void UPDATE(float dt);
 	void PushToDrawQue();
 
 protected:
+	virtual bool Initialize();
+	virtual void Reset();
+	virtual void Update(float dt);
+
+
 	std::vector<GameObject*> m_GameObjects;
 	std::string m_Name;
 };

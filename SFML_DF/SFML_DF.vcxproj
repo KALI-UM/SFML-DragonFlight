@@ -157,6 +157,7 @@
     <ClCompile Include="DShape.cpp" />
     <ClCompile Include="DSprite.cpp" />
     <ClCompile Include="DText.cpp" />
+    <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputManager.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="DShape.h" />
     <ClInclude Include="DSprite.h" />
     <ClInclude Include="DText.h" />
+    <ClInclude Include="Framework.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InputManager.h" />

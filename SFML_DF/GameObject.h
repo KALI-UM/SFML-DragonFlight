@@ -16,10 +16,10 @@ public:
 
 	void SetIsValid(bool value);
 	bool GetIsValid()const;
-	bool GetIsVisible()const;
+	bool GetIsVisible(size_t index = 0)const;
 
-	
-	DrawableObject* GetDrawable(size_t index=0) const;
+
+	DrawableObject* GetDrawable(size_t index = 0) const;
 	DrawableObject* GetDrawable(const std::string& name) const;
 	void SetDrawable(DrawableObject* dobj);
 

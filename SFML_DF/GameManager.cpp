@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "DrawableObject.h"
+#include "Scene_Test.h"
 
 GameManager::GameManager()
 	:m_MainWindow(nullptr),
@@ -36,6 +37,10 @@ bool GameManager::Initialize(sf::RenderWindow* window)
 	bool success = true;
 	success &= GetInputManager()->Initialize();
 	success &= GetSceneManager()->Initialize();
+
+	Scene_Test* test = new Scene_Test();
+	SM->PushScene(test);
+
 	return success;
 }
 
