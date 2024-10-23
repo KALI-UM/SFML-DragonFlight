@@ -10,9 +10,10 @@ public:
 	virtual ~GameObject();
 	bool operator==(const GameObject& rhs);
 
-	virtual bool Initialize();
-	virtual void Reset();
-	virtual void Update(float dt);
+	bool INITIALIZE();
+	void RESET();
+	void UPDATE(float dt);
+	void RELEASE();
 
 	void SetIsValid(bool value);
 	bool GetIsValid()const;
@@ -24,6 +25,11 @@ public:
 	void SetDrawable(DrawableObject* dobj);
 
 	int GetDrawbleCount()const;
+
+protected:
+	virtual bool Initialize();
+	virtual void Reset();
+	virtual void Update(float dt);
 
 private:
 	const int	m_Id;

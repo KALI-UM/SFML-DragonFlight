@@ -22,6 +22,9 @@
     <Filter Include="GameEngine\Drawable">
       <UniqueIdentifier>{ed74a6ef-8021-446c-b4f5-40eaa77dca59}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{1ec3e776-9e12-4f66-80f8-f44ebb9425d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,9 +35,6 @@
     </ClCompile>
     <ClCompile Include="SceneBase.cpp">
       <Filter>GameEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene_Test.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
       <Filter>GameEngine\Manager</Filter>
@@ -78,15 +78,27 @@
     <ClCompile Include="Score.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Framework.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Background.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="GameOver.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="Scene_Lobby.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Test.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Background_Lobby.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+>>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -97,9 +109,6 @@
     </ClInclude>
     <ClInclude Include="SceneBase.h">
       <Filter>GameEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_Test.h">
-      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
       <Filter>GameEngine\Manager</Filter>
@@ -152,14 +161,26 @@
     <ClInclude Include="Score.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Framework.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Background.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="GameOver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+=======
+    <ClInclude Include="Background_Lobby.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Lobby.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Test.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+>>>>>>> origin/master
   </ItemGroup>
 </Project>

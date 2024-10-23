@@ -25,9 +25,15 @@ bool Character::Initialize()
 void Character::Reset()
 {
 	m_CharSprite->SetOriginCenter();
+<<<<<<< HEAD
 	m_CharSprite->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, GM->GetWindow()->getSize().y - 100);
 	m_HitBox->SetFRect(m_CharSprite->GetFloatRect());
 	m_speed = 400;
+=======
+	m_CharSprite->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, GM->GetWindow()->getSize().y - 150);
+	m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
+	m_speed = 300;
+>>>>>>> origin/master
 }
 
 void Character::Update(float dt)
@@ -35,13 +41,13 @@ void Character::Update(float dt)
 	if (IM->GetKey(sf::Keyboard::Left))
 	{
 		m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x - m_speed * dt, m_CharSprite->Transform()->getPosition().y);
-		m_HitBox->SetFRect(m_CharSprite->GetFloatRect());
+		m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
 
 	}
 	if (IM->GetKey(sf::Keyboard::Right))
 	{
 		m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x + m_speed * dt, m_CharSprite->Transform()->getPosition().y);
-		m_HitBox->SetFRect(m_CharSprite->GetFloatRect());
+		m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
 	}
 	
 	bool rectcheck = false;

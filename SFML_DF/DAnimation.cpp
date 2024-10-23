@@ -159,6 +159,11 @@ void DAnimation::SetOutlineColor(int r, int g, int b, int a)
 	SetOutlineColor(sf::Color(r, g, b, a));
 }
 
+sf::FloatRect DAnimation::GetFloatRect() const
+{
+	return m_Sprite.getGlobalBounds();
+}
+
 sf::Vector2u DAnimation::GetFrame() const
 {
 	return m_CurrFrame;

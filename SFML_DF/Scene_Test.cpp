@@ -22,6 +22,7 @@ float Scene_Test::m_BG_YTopPos = 0;
 float Scene_Test::m_SpeedVariable = 25;
 
 Scene_Test::Scene_Test()
+	:SceneBase("Test")
 {
 	m_YPos = GM->GetWindow()->getSize().y / 2 - 360;
 	m_BG_XPos = GM->GetWindow()->getSize().x / 2;

@@ -2,7 +2,8 @@
 #include "SceneBase.h"
 #include "GameObject.h"
 
-SceneBase::SceneBase()
+SceneBase::SceneBase(const std::string& name)
+	:m_Name(name)
 {
 }
 
@@ -19,7 +20,7 @@ bool SceneBase::INITIALIZE()
 	bool result = Initialize();
 	for (auto& gobj : m_GameObjects)
 	{
-		result &= gobj->Initialize();
+		result &= gobj->INITIALIZE();
 	}
 	RESET();
 	return result;
@@ -27,6 +28,10 @@ bool SceneBase::INITIALIZE()
 
 void SceneBase::RESET()
 {
+	for (auto& gobj : m_GameObjects)
+	{
+		gobj->RESET();
+	}
 	Reset();
 }
 
@@ -36,8 +41,13 @@ void SceneBase::UPDATE(float dt)
 	for (auto& gobj : m_GameObjects)
 	{
 		if (gobj->GetIsValid())
-			gobj->Update(dt);
+			gobj->UPDATE(dt);
 	}
+}
+
+void SceneBase::EXIT()
+{
+	Exit();
 }
 
 void SceneBase::RELEASE()
@@ -58,6 +68,10 @@ void SceneBase::Update(float dt)
 {
 }
 
+void SceneBase::Exit()
+{
+}
+
 void SceneBase::Release()
 {
 }
@@ -75,4 +89,9 @@ void SceneBase::PushToDrawQue()
 			}
 		}
 	}
+}
+
+std::string SceneBase::GetName() const
+{
+	return m_Name;
 }

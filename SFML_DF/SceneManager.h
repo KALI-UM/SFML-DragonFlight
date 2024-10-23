@@ -14,11 +14,18 @@ public:
 	void Release();
 	void PushToDrawQue();
 
-	int GetCurrentSceneIndex() const;
-	void SetCurrentSceneIndex(int index);
+	std::string GetCurrentSceneName() const;
+	void SetCurrentScene(const std::string& name);
+	bool ChangeScene(const std::string& name);
 	void PushScene(SceneBase* scene);
 private:
-	int m_CurrSceneIndex = 0;
-	std::vector<SceneBase*> m_Scenes;				//게임 중간 신 삭제 금지
+	void SetCurrentScene(SceneBase* scene);
+
+	std::string m_CurrSceneName;
+	SceneBase* m_CurrScene;
+	SceneBase* m_WantsTo;
+	std::unordered_map<std::string, SceneBase*> m_Scenes;
+
+	SceneBase* m_EmptyScene;
 };
 
