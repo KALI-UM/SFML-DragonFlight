@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "DrawableObject.h"
+#include "SFML/Window.hpp"
 #include "Scene_Test.h"
 #include "Scene_Lobby.h"
 
@@ -36,8 +37,11 @@ bool GameManager::Initialize(sf::RenderWindow* window)
 {
 	m_MainWindow = window;
 	bool success = true;
+	m_MainWindow->setMouseCursorVisible(false);
 	success &= GetInputManager()->Initialize();
 	success &= GetSceneManager()->Initialize();
+
+	m_Volume = 0.8f;
 
 	Scene_Lobby* lobby = new Scene_Lobby();
 	Scene_Test* test = new Scene_Test();
@@ -96,6 +100,16 @@ void GameManager::PushDrawableObject(DrawableObject* dobj)
 const GameMode& GameManager::GetGameMode() const
 {
 	return m_GameMode;
+}
+
+float GameManager::GetGlobalVolume() const
+{
+	return m_Volume;
+}
+
+void GameManager::SetGlobalVolume(float volume)
+{
+	m_Volume = volume;
 }
 
 bool PriorityComp::operator()(DrawableObject*& lhs, DrawableObject*& rhs)

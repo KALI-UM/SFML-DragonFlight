@@ -45,9 +45,12 @@ public:
 	sf::RenderWindow* GetWindow();
 	void PushDrawableObject(DrawableObject* dobj);
 	const GameMode& GetGameMode()const;
+	float GetGlobalVolume()const;
+	void SetGlobalVolume(float volume);
 private:
 	sf::RenderWindow* m_MainWindow;
 	std::priority_queue<DrawableObject*, std::vector<DrawableObject*>, PriorityComp> m_DrawQue;
+
 
 	//ResourceManager<sf::Texture>* const		m_RTextureManager;
 	//ResourceManager<sf::Font>* const		m_RFontManager;
@@ -55,5 +58,6 @@ private:
 	SceneManager* const						m_SceneManager;
 
 	GameMode								m_GameMode;
+	float									m_Volume;
 };
 

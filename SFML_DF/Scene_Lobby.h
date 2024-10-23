@@ -1,6 +1,8 @@
 #pragma once
 #include "SceneBase.h"
 class Background_Lobby;
+class SoundObject;
+class DieEffect;
 class Scene_Lobby :
     public SceneBase
 {
@@ -17,7 +19,9 @@ protected:
 
 private:
 	Background_Lobby* m_LobbyImage;
-	bool m_Start = false;
+	SoundObject* m_SoundObject;
+	std::vector< DieEffect*> m_Effects;
+
 	float m_FadeSpeed;
 };
 

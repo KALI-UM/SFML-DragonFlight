@@ -1,6 +1,11 @@
 #pragma once
 #include "GameObject.h"
 
+namespace sf
+{
+	class Sound;
+}
+
 class DSprite;
 class Background_Lobby :
     public GameObject
@@ -21,6 +26,11 @@ private:
 	DSprite* m_LobbyCharacter;
 
 	float m_FadeOutSpeed=-1;
-	float currvColorValue;
+	float m_CurrvColorValue;
+	float m_BgmVolume;
+	float m_ClickVolume;
+
+	sf::Sound* m_BackgroundMusic;
+	sf::Sound* m_ClickEffect;
 };
 
