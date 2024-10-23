@@ -16,21 +16,21 @@ protected:
 	sf::RenderWindow m_MainWindow;
 
 	sf::Clock clock;
-	float timeScale = 1.f;
+	float m_TimeScale = 1.f;
 
 	float time = 0.f;
-	float deltaTime = 0.f;
-	float realTime = 0.f;
-	float realDeltaTime = 0.f;
+	float m_DeltaTime = 0.f;
+	float m_RealTime = 0.f;
+	float m_RealDeltaTime = 0.f;
 
 public:
 	float GetTime() const { return time; }
-	float GetDeltaTime() const { return deltaTime; }
-	float GetRealTime() const { return realTime; }
-	float GetRealDeltaTime() const { return realDeltaTime; }
+	float GetDeltaTime() const { return m_DeltaTime; }
+	float GetRealTime() const { return m_RealTime; }
+	float GetRealDeltaTime() const { return m_RealDeltaTime; }
 
-	void SetTimeScale(float newTimeScale) { timeScale = newTimeScale; }
-	float GetTimeScale() const { return timeScale; }
+	void SetTimeScale(float newTimeScale) { m_TimeScale = newTimeScale; }
+	float GetTimeScale() const { return m_TimeScale; }
 
 	virtual void Initialize(int width, int height, const std::string& name);
 	virtual void Do();

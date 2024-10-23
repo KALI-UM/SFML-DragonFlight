@@ -9,9 +9,10 @@ class SceneManager :
 public:
 
 	bool Initialize();
+	void Reset();
 	void Update(float dt);
-	void PushToDrawQue();
 	void Release();
+	void PushToDrawQue();
 
 	int GetCurrentSceneIndex() const;
 	void SetCurrentSceneIndex(int index);

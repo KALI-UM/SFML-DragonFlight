@@ -104,10 +104,10 @@ void DAnimation::SetTexture(sf::Texture* tex)
 	}
 }
 
-bool DAnimation::GetIsVisible() const
-{
-	return (m_Sprite.getColor().a != sf::Color::Transparent.a)&& GetIsValid();
-}
+//bool DAnimation::GetIsVisible() const
+//{
+//	return (m_Sprite.getColor().a != sf::Color::Transparent.a)&& GetIsValid();
+//}
 
 void DAnimation::SetOriginCenter()
 {

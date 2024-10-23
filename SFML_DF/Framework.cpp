@@ -14,10 +14,10 @@ void Framework::Do()
     while (m_MainWindow.isOpen())
     {
         sf::Time dt = clock.restart();
-        realDeltaTime = deltaTime = dt.asSeconds();
-        deltaTime *= timeScale;
-        realTime += realDeltaTime;
-        time += deltaTime;
+        m_RealDeltaTime = m_DeltaTime = dt.asSeconds();
+        m_DeltaTime *= m_TimeScale;
+        m_RealTime += m_RealDeltaTime;
+        time += m_DeltaTime;
 
         // 이벤트 루프
         IM->Clear();
@@ -31,7 +31,7 @@ void Framework::Do()
         }
 
         // 업데이트
-        GM->Update(deltaTime);
+        GM->Update(m_DeltaTime);
         // 드로우
 
         m_MainWindow.clear();

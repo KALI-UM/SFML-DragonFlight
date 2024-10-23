@@ -46,7 +46,7 @@ public:
 		}
 		return m_IsValid;
 	}
-	virtual bool GetIsVisible()const = 0;
+	//virtual bool GetIsVisible()const = 0;
 	virtual void SetOriginCenter() = 0;
 
 	sf::Drawable* GetDrawable()const { return m_Drawable; }

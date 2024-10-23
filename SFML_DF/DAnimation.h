@@ -15,7 +15,7 @@ public:
 
 	void Update(float dt) override;
 	void SetTexture(sf::Texture* tex);
-	bool GetIsVisible()const;
+	//bool GetIsVisible()const;
 	void SetOriginCenter();
 
 	sf::Color GetColor() const;

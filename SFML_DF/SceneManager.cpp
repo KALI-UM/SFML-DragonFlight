@@ -7,6 +7,11 @@ bool SceneManager::Initialize()
     return false;
 }
 
+void SceneManager::Reset()
+{
+    m_Scenes[m_CurrSceneIndex]->RESET();
+}
+
 void SceneManager::Update(float dt)
 {
     m_Scenes[m_CurrSceneIndex]->UPDATE(dt);

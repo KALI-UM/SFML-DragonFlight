@@ -78,10 +78,10 @@ sf::FloatRect DSprite::GetFloatRect() const
 	return m_Sprite.getGlobalBounds();
 }
 
-bool DSprite::GetIsVisible() const
-{
-	return (m_Sprite.getColor().a != sf::Color::Transparent.a) && GetIsValid();
-}
+//bool DSprite::GetIsVisible() const
+//{
+//	return (m_Sprite.getColor().a != sf::Color::Transparent.a) && GetIsValid();
+//}
 
 void DSprite::SetOriginCenter()
 {

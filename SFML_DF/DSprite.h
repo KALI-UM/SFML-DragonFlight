@@ -16,7 +16,7 @@ public:
 
 	void SetTexture(sf::Texture* tex);
 	sf::FloatRect GetFloatRect()const;
-	bool GetIsVisible()const;
+	//bool GetIsVisible()const;
 	void SetOriginCenter();
 	sf::Color GetColor() const;
 	void SetColor(const sf::Color& color);

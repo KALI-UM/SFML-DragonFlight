@@ -87,10 +87,10 @@ void DText::SetString(const std::string& text)
 	m_Text.setString(text);
 }
 
-bool DText::GetIsVisible() const
-{
-	return (m_Text.getFillColor().a != sf::Color::Transparent.a) && (m_Text.getOutlineColor().a != sf::Color::Transparent.a) && GetIsValid();
-}
+//bool DText::GetIsVisible() const
+//{
+//	return (m_Text.getFillColor().a != sf::Color::Transparent.a) && (m_Text.getOutlineColor().a != sf::Color::Transparent.a) && GetIsValid();
+//}
 
 void DText::SetOriginCenter()
 {
