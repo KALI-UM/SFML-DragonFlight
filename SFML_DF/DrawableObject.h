@@ -52,10 +52,13 @@ public:
 	sf::Drawable* GetDrawable()const { return m_Drawable; }
 	sf::Transformable* Transform() { return m_Transform; }
 
+	float GetPriority(bool x) { return m_DrawType == DrawType::UI ? m_Priority : x ? Transform()->getPosition().x : Transform()->getPosition().y; };
+	void SetPriority(float p) { m_Priority = p; };
+
 	std::string GetName()const { return m_Name; }
 	void SetName(const std::string& name) { m_Name = name; }
 
-	virtual sf::FloatRect GetFloatRect()const=0;
+	virtual sf::FloatRect GetFloatRect()const = 0;
 	virtual sf::Color GetColor() const = 0;
 	virtual void SetColor(const sf::Color& color) = 0;
 	virtual void SetColor(int r, int g, int b, int a = 255) = 0;
@@ -73,12 +76,12 @@ public:
 
 	static bool YCompare(DrawableObject*& lhs, DrawableObject*& rhs)
 	{
-		return lhs->m_DrawType > rhs->m_DrawType ? true : lhs->m_DrawType == rhs->m_DrawType ? lhs->Transform()->getPosition().y > rhs->Transform()->getPosition().y : false;
+		return lhs->m_DrawType > rhs->m_DrawType ? true : lhs->m_DrawType == rhs->m_DrawType ? lhs->GetPriority(false) > rhs->GetPriority(false) : false;
 	}
 
 	static bool XCompare(DrawableObject*& lhs, DrawableObject*& rhs)
 	{
-		return lhs->m_DrawType > rhs->m_DrawType ? true : lhs->m_DrawType == rhs->m_DrawType ? lhs->Transform()->getPosition().x > rhs->Transform()->getPosition().x : false;
+		return lhs->m_DrawType > rhs->m_DrawType ? true : lhs->m_DrawType == rhs->m_DrawType ? lhs->GetPriority(true) > rhs->GetPriority(true) : false;
 	}
 
 	const DataType m_DataType;
@@ -86,6 +89,7 @@ public:
 protected:
 	sf::Drawable* m_Drawable;
 	sf::Transformable* m_Transform;
-	bool m_IsValid;
-	std::string m_Name;
+	bool					m_IsValid;
+	std::string				m_Name;
+	float					m_Priority;
 };

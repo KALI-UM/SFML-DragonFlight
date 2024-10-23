@@ -160,6 +160,7 @@
     <ClCompile Include="DShape.cpp" />
     <ClCompile Include="DSprite.cpp" />
     <ClCompile Include="DText.cpp" />
+    <ClCompile Include="EffectObject.cpp" />
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="DShape.h" />
     <ClInclude Include="DSprite.h" />
     <ClInclude Include="DText.h" />
+    <ClInclude Include="EffectObject.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />

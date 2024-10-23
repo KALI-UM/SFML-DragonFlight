@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "Scene_Lobby.h"
 #include "Background_Lobby.h"
-<<<<<<< HEAD
 #include "MouseCursor.h"
 #include "DieEffect.h"
 #include "SoundObject.h"
