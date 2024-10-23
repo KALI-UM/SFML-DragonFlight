@@ -19,6 +19,7 @@ public:
 
 	DSprite* m_CharSprite;
 	DRectangle* m_HitBox;
+	sf::FloatRect m_ColliderBox;
 
 protected:
 	float m_speed;

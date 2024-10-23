@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AABB.cpp" />
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="DAnimation.cpp" />
     <ClCompile Include="DCircle.cpp" />
@@ -170,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABB.h" />
+    <ClInclude Include="Background.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="DAnimation.h" />
     <ClInclude Include="DCircle.h" />

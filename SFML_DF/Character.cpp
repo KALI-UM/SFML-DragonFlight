@@ -45,18 +45,19 @@ void Character::Update(float dt)
 	}
 
 	
-
+	bool rectcheck = false;
 	for (int i = 0; i < m_Enemy->size(); i++)
 	{
 		if (m_CharSprite->GetFloatRect().intersects((*m_Enemy)[i]->m_monster->GetFloatRect()))
 		{
 			m_HitBox->SetOutlineColor(sf::Color::Red);
+			rectcheck = true;
 		}
-		else
+	}
+		if (!rectcheck)
 		{
 			m_HitBox->SetOutlineColor(sf::Color::Green);
 		}
-	}
 }
 
 void Character::getMonster(std::vector<Monster*>* mons)
