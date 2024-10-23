@@ -3,7 +3,7 @@
 
 int main()
 {
-	Framework::GetInstance()->Initialize(540, 960, "SFML Framework");
+	Framework::GetInstance()->Initialize(540, 720, "SFML Framework");
 	Framework::GetInstance()->Do();
 	Framework::GetInstance()->Release();
 	return 0;

@@ -25,9 +25,9 @@ bool Character::Initialize()
 void Character::Reset()
 {
 	m_CharSprite->SetOriginCenter();
-	m_CharSprite->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, GM->GetWindow()->getSize().y - 150);
+	m_CharSprite->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, GM->GetWindow()->getSize().y - 100);
 	m_HitBox->SetFRect(m_CharSprite->GetFloatRect());
-	m_speed = 300;
+	m_speed = 400;
 }
 
 void Character::Update(float dt)
@@ -43,7 +43,6 @@ void Character::Update(float dt)
 		m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x + m_speed * dt, m_CharSprite->Transform()->getPosition().y);
 		m_HitBox->SetFRect(m_CharSprite->GetFloatRect());
 	}
-
 	
 	bool rectcheck = false;
 	for (int i = 0; i < m_Enemy->size(); i++)
@@ -52,6 +51,7 @@ void Character::Update(float dt)
 		{
 			m_HitBox->SetOutlineColor(sf::Color::Red);
 			rectcheck = true;
+			break;
 		}
 	}
 		if (!rectcheck)
