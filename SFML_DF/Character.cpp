@@ -27,7 +27,6 @@ void Character::Reset()
 	m_CharSprite->SetOriginCenter();
 	m_CharSprite->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, GM->GetWindow()->getSize().y - 100);
 	m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
-	m_speed = 400;
 	m_CharSprite->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, GM->GetWindow()->getSize().y - 150);
 	m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
 	m_speed = 400;

@@ -40,6 +40,8 @@ void Background_Lobby::Reset()
 
 void Background_Lobby::Update(float dt)
 {
+
+
 	if (m_FadeOutSpeed > 0)
 	{
 		currvColorValue = currvColorValue +(dt * m_FadeOutSpeed);
