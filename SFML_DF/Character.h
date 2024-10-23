@@ -15,12 +15,14 @@ public:
 	void Reset();
 	void Update(float dt);
 
+	bool RectCheck();
+	void SetStopCharacter();
+
 	void getMonster(std::vector<Monster*> *mons);
 
 	DSprite* m_CharSprite;
 	DRectangle* m_HitBox;
 	sf::FloatRect m_ColliderBox;
-	bool rectcheck = false;
 
 protected:
 	float m_speed;

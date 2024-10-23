@@ -14,6 +14,8 @@ public:
 	void Reset();
 	void Update(float dt);
 
+	void SetStopMonster();
+
 	void Set(float speed, const sf::Vector2f& pos, const sf::Vector2f& scale = sf::Vector2f(1, 1), bool origincenter=true);
 
 	DSprite* m_monster;

@@ -12,17 +12,18 @@ Score::~Score()
 
 bool Score::Initialize()
 {
-    m_score = new DText("resource/KOMIKAP_.ttf", "Score : ", 30, DrawType::UI);
-    SetDrawable(m_score);
+    m_scoreText = new DText("resource/CookieRun Bold.ttf", "Score : ", 50, DrawType::UI);
+    SetDrawable(m_scoreText);
     return false;
 }
 
 void Score::Reset()
 {
-    m_score->SetFillColor(sf::Color::White);
-    m_score->Transform()->setPosition(0.f, 0.f);
+    m_scoreText->SetFillColor(sf::Color::White);
+    m_scoreText->Transform()->setPosition(0.f, 0.f);
 }
 
 void Score::Update(float dt)
 {
+    m_scoreText->SetString("Score : " + std::to_string((int)m_Score));
 }
