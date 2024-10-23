@@ -38,7 +38,12 @@ public:
 #ifdef NDEBUG
 		if (m_DrawType == DrawType::Debug) //디버그 상황이 아닐때 그려지지 않게 하기 위함
 			return false;
+		return m_IsValid;
 #endif
+		if (GM->GetGameMode() != GameMode::Debug && m_DrawType == DrawType::Debug)
+		{
+			return false;
+		}
 		return m_IsValid;
 	}
 	virtual bool GetIsVisible()const = 0;

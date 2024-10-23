@@ -35,8 +35,14 @@ void SceneBase::UPDATE(float dt)
 	Update(dt);
 	for (auto& gobj : m_GameObjects)
 	{
-		gobj->Update(dt);
+		if (gobj->GetIsValid())
+			gobj->Update(dt);
 	}
+}
+
+void SceneBase::RELEASE()
+{
+	Release();
 }
 
 bool SceneBase::Initialize()
@@ -49,6 +55,10 @@ void SceneBase::Reset()
 }
 
 void SceneBase::Update(float dt)
+{
+}
+
+void SceneBase::Release()
 {
 }
 

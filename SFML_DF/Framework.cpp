@@ -26,6 +26,7 @@ void Framework::Do()
         {
             if (event.type == sf::Event::Closed)
                 m_MainWindow.close();
+
             IM->Update(event);
         }
 

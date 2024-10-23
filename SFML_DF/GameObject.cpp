@@ -60,7 +60,7 @@ bool GameObject::GetIsValid() const
 bool GameObject::GetIsVisible(size_t index) const
 {
 	//return GetIsValid() && GetDrawable(index) && GetDrawable(index)->GetIsVisible();
-	return GetIsValid() && GetDrawable(index);
+	return GetIsValid() && GetDrawable(index) && GetDrawable(index)->GetIsValid();
 }
 
 DrawableObject* GameObject::GetDrawable(size_t index)const
@@ -86,6 +86,6 @@ void GameObject::SetDrawable(DrawableObject* dobj)
 
 int GameObject::GetDrawbleCount() const
 {
-	return m_Drawable.size();
+	return (int)m_Drawable.size();
 }
 

@@ -11,6 +11,7 @@ public:
 	bool Initialize();
 	void Update(float dt);
 	void PushToDrawQue();
+	void Release();
 
 	int GetCurrentSceneIndex() const;
 	void SetCurrentSceneIndex(int index);
