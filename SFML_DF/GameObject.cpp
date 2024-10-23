@@ -57,10 +57,10 @@ bool GameObject::GetIsValid() const
 	return m_IsValid;
 }
 
-bool GameObject::GetIsVisible() const
+bool GameObject::GetIsVisible(size_t index) const
 {
-	//0번째가 보이면 보이는거다..? 좀 이상해짐..ㅠ
-	return GetIsValid() && GetDrawable() && GetDrawable()->GetIsVisible();
+	//return GetIsValid() && GetDrawable(index) && GetDrawable(index)->GetIsVisible();
+	return GetIsValid() && GetDrawable(index);
 }
 
 DrawableObject* GameObject::GetDrawable(size_t index)const
