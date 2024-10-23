@@ -23,11 +23,22 @@ bool Scene_Test::Initialize()
 {
 
 	m_Player = new Character();
-	m_Monster = new Monster();
+	m_Monsters.resize(5);
+	int x = 108;
+	for (int i = 0; i < m_Monsters.size(); ++i)
+	{
+		m_Monsters[i] = new Monster();
+		/*m_Monsters[i]->m_monster->Transform()->setPosition(x, 800);
+		x += 108;*/
+	}
 	m_Score = new Score();
-	m_Player->getMonster(m_Monster);
+	m_Player->getMonster(&m_Monsters);
 	m_GameObjects.push_back(m_Player);
-	m_GameObjects.push_back(m_Monster);
+	for(int i = 0; i < m_Monsters.size(); i++)
+	{
+		m_GameObjects.push_back(m_Monsters[i]);
+	}
+	
 	m_GameObjects.push_back(m_Score);
 	
 	SceneBase::Initialize();
@@ -38,5 +49,4 @@ bool Scene_Test::Initialize()
 void Scene_Test::Update(float dt)
 {
 	SceneBase::Update(dt);
-
 }

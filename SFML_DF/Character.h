@@ -15,14 +15,14 @@ public:
 	void Reset();
 	void Update(float dt);
 
-	void getMonster(Monster* mons);
+	void getMonster(std::vector<Monster*> *mons);
 
 	DSprite* m_CharSprite;
 	DRectangle* m_HitBox;
 
 protected:
 	float m_speed;
-	Monster* m_Enemy;
+	std::vector<Monster*>* m_Enemy;
 
 };
 

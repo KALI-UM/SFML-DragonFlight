@@ -15,7 +15,7 @@ public:
 	void Update(float dt)override;
 
 	Character* m_Player;
-	Monster* m_Monster;
+	std::vector<Monster*> m_Monsters;
 	Score* m_Score;
 };
 

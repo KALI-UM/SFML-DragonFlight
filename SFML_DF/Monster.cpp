@@ -13,7 +13,7 @@ Monster::~Monster()
 
 bool Monster::Initialize()
 {
-	m_monster = new DSprite("monster/dragon_01.png");
+	m_monster = new DSprite("monster/dragon_001.png");
 	m_HitBox = new DRectangle(sf::FloatRect(m_monster->GetFloatRect()), sf::Color::Blue, 1, sf::Color::Transparent, DrawType::Debug);
 	SetDrawable(m_monster);
 	SetDrawable(m_HitBox);
