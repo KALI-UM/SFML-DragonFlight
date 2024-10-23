@@ -13,7 +13,7 @@ class Character;
 class Monster;
 class Score;
 class Background;
-class GameOver;
+class GameStart;
 class Scene_Test
 	:public SceneBase
 {
@@ -28,7 +28,6 @@ public:
 	Character* m_Player;
 	std::vector<Monster*> m_Monsters;
 	Score* m_Score;
-	GameOver* m_GameOver;
 	Background* m_Background;
 
 	Position m_SpawnPos;

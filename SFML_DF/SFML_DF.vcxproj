@@ -163,11 +163,13 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="GameStart.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Scene_GameOver.cpp" />
     <ClCompile Include="Scene_Lobby.cpp" />
     <ClCompile Include="Scene_Test.cpp" />
     <ClCompile Include="Score.cpp" />
@@ -189,6 +191,7 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameOver.h" />
+    <ClInclude Include="GameStart.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="pch.h">
@@ -198,6 +201,7 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Scene_GameOver.h" />
     <ClInclude Include="Scene_Lobby.h" />
     <ClInclude Include="Scene_Test.h" />
     <ClInclude Include="Score.h" />

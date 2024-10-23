@@ -2,18 +2,17 @@
 #include "GameObject.h"
 
 class DText;
-class Score : public GameObject
+class GameStart : public GameObject
 {
 public:
-	Score();
-	~Score();
+	GameStart();
+	~GameStart();
 
 	bool Initialize();
 	void Reset();
 	void Update(float dt);
 
-	DText* m_scoreText;
-	float m_Score = 0;
+	DText* m_GameStart;
 
 protected:
 

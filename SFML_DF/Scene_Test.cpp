@@ -11,7 +11,6 @@
 #include "Monster.h"
 #include "Score.h"
 #include "Background.h"
-#include "GameOver.h"
 
 float Scene_Test::m_XPosSet[5] = { 55, 163, 271, 379, 487 };
 float Scene_Test::m_YPos;
@@ -43,8 +42,6 @@ bool Scene_Test::Initialize()
 	}
 	m_Score = new Score();
 	m_Player->getMonster(&m_Monsters);
-	m_GameOver = new GameOver();
-
 
 	m_GameObjects.push_back(m_Background);
 	m_GameObjects.push_back(m_Player);
@@ -52,11 +49,6 @@ bool Scene_Test::Initialize()
 	{
 		m_GameObjects.push_back(m_Monsters[i]);
 	}
-	/*if (m_Player->rectcheck == true)
-	{
-		std::cout << "GameOver!!" << std::endl;
-		m_GameObjects.push_back(m_GameOver);
-	}*/
 	m_GameObjects.push_back(m_Score);
 	return true;
 }
@@ -80,32 +72,42 @@ void Scene_Test::Update(float dt)
 		m_Background->Set2(m_BackgoundSpeed, { m_BG_XPos , m_BG_YPos }, { 1, 1});
 	}
 
-	/*if (m_Player->m_CharSprite->Transform()->getPosition().y > GM->GetWindow()->getSize().y - 150)
+	if (m_Player->RectCheck() == true)
 	{
-		m_Player->m_CharSprite->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, (GM->GetWindow()->getSize().y - 100) - m_CharacterSpeed * dt);
-	}*/
+		m_Player->SetStopCharacter();
+		for (int i = 0; i < m_Monsters.size(); i++)
+		{
+			m_Monsters[i]->SetStopMonster();
+		}
+		m_Background->SetStopBackground();
+
+		SM->ChangeScene("GameOver");
+	}
+
 }
 
 void Scene_Test::Reset()
 {
-	m_SpawnPos = (Position)(rand() % 4);
-	for (int i = 0; i < m_Monsters.size(); i++)
+	if(m_Player->RectCheck() == false)
 	{
-		if (i== (int)m_SpawnPos || i == (int)m_SpawnPos+1)
+		m_SpawnPos = (Position)(rand() % 4);
+		for (int i = 0; i < m_Monsters.size(); i++)
 		{
-			std::cout << i << "번째 몬스터 안스폰\n";
-			m_Monsters[i]->SetIsValid(false);
+			if (i == (int)m_SpawnPos || i == (int)m_SpawnPos + 1)
+			{
+				std::cout << i << "번째 몬스터 안스폰\n";
+				m_Monsters[i]->SetIsValid(false);
+			}
+			else
+			{
+				std::cout << i << "번째 몬스터 스폰\n";
+				m_Monsters[i]->SetIsValid(true);
+				m_Monsters[i]->Set(m_MonsterSpeed, { m_XPosSet[i], m_YPos }, { 0.6f, 0.6f });
+			}
 		}
-		else
-		{
-			std::cout << i << "번째 몬스터 스폰\n";
-			m_Monsters[i]->SetIsValid(true);
-			m_Monsters[i]->Set(m_MonsterSpeed, { m_XPosSet[i], m_YPos }, { 0.6f, 0.6f });
-		}
+		m_ResetPoint.y = m_YPos;
+
+		m_MonsterSpeed += m_SpeedVariable;
+		m_BackgoundSpeed += m_SpeedVariable;
 	}
-	m_ResetPoint.y = m_YPos;
-
-	m_MonsterSpeed += m_SpeedVariable;
-	m_BackgoundSpeed += m_SpeedVariable;
-
 }

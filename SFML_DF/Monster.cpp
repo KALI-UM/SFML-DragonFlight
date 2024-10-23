@@ -36,6 +36,11 @@ void Monster::Update(float dt)
 	m_HitBox->SetFloatRect(m_monster->GetFloatRect());
 }
 
+void Monster::SetStopMonster()
+{
+	m_speed = 0;
+}
+
 void Monster::Set(float speed, const sf::Vector2f& pos, const sf::Vector2f& scale, bool origincenter)
 {
 	m_speed = speed;

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Scene_Lobby.h"
 #include "Background_Lobby.h"
+#include "GameStart.h"
 
 Scene_Lobby::Scene_Lobby()
     :SceneBase("Lobby")
@@ -14,7 +15,9 @@ Scene_Lobby::~Scene_Lobby()
 bool Scene_Lobby::Initialize()
 {
     m_LobbyImage = new Background_Lobby();
+    m_GameStart = new GameStart();
     m_GameObjects.push_back(m_LobbyImage);
+    m_GameObjects.push_back(m_GameStart);
     return false;
 }
 

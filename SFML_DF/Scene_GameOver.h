@@ -1,13 +1,12 @@
 #pragma once
 #include "SceneBase.h"
-class Background_Lobby;
-class GameStart;
-class Scene_Lobby :
-    public SceneBase
+
+class GameOver;
+class Scene_GameOver : public SceneBase
 {
 public:
-	Scene_Lobby();
-	~Scene_Lobby();
+	Scene_GameOver();
+	~Scene_GameOver();
 
 protected:
 	bool Initialize() override;
@@ -15,10 +14,8 @@ protected:
 	void Update(float dt) override;
 	void Release() override;
 
-
 private:
-	Background_Lobby* m_LobbyImage;
-	GameStart* m_GameStart;
+	GameOver* m_GameOverUI;
 	bool m_Start = false;
 	float m_FadeSpeed;
 };
