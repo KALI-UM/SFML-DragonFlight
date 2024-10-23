@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "DrawableObject.h"
 #include "Scene_Test.h"
+#include "Scene_Lobby.h"
 
 GameManager::GameManager()
 	:m_MainWindow(nullptr),
@@ -38,9 +39,11 @@ bool GameManager::Initialize(sf::RenderWindow* window)
 	success &= GetInputManager()->Initialize();
 	success &= GetSceneManager()->Initialize();
 
+	Scene_Lobby* lobby = new Scene_Lobby();
 	Scene_Test* test = new Scene_Test();
+	SM->PushScene(lobby);
 	SM->PushScene(test);
-
+	SM->SetCurrentScene(lobby->GetName());
 	return success;
 }
 

@@ -26,14 +26,14 @@ void Monster::Reset()
 	m_monster->SetOriginCenter();
 	//m_monster->Transform()->setPosition(GM->GetWindow()->getSize().x / 2, GM->GetWindow()->getSize().y / 2 - 400);
 	//m_monster->Transform()->setScale(0.5f, 0.5f);
-	m_HitBox->SetFRect(m_monster->GetFloatRect());
+	m_HitBox->SetFloatRect(m_monster->GetFloatRect());
 	m_speed = 100;
 }
 
 void Monster::Update(float dt)
 {
 	m_monster->Transform()->setPosition(m_monster->Transform()->getPosition().x, m_monster->Transform()->getPosition().y + m_speed * dt);
-	m_HitBox->SetFRect(m_monster->GetFloatRect());
+	m_HitBox->SetFloatRect(m_monster->GetFloatRect());
 }
 
 void Monster::Set(float speed, const sf::Vector2f& pos, const sf::Vector2f& scale, bool origincenter)

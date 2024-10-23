@@ -4,44 +4,71 @@
 
 bool SceneManager::Initialize()
 {
-    return false;
+	m_EmptyScene = new SceneBase("");
+	m_CurrSceneName = "";
+	m_WantsTo = nullptr;
+	return false;
 }
 
 void SceneManager::Reset()
 {
-    m_Scenes[m_CurrSceneIndex]->RESET();
+	m_CurrScene->RESET();
 }
 
 void SceneManager::Update(float dt)
 {
-    m_Scenes[m_CurrSceneIndex]->UPDATE(dt);
+
+	if (m_WantsTo !=nullptr)
+	{
+		m_CurrScene->EXIT();
+		SetCurrentScene(m_WantsTo);
+		m_WantsTo = nullptr;
+		m_CurrScene->RESET();
+	}
+	m_CurrScene->UPDATE(dt);
 }
 
 void SceneManager::PushToDrawQue()
 {
-    m_Scenes[m_CurrSceneIndex]->PushToDrawQue();
+	m_CurrScene->PushToDrawQue();
 }
 
 void SceneManager::Release()
 {
-    for (auto& scene : m_Scenes)
-    {
-        scene->RELEASE();
-    }
+	for (auto& scene : m_Scenes)
+	{
+		scene.second->RELEASE();
+	}
 }
 
-int SceneManager::GetCurrentSceneIndex() const
+std::string SceneManager::GetCurrentSceneName() const
 {
-    return m_CurrSceneIndex;
+	return m_CurrSceneName;
 }
 
-void SceneManager::SetCurrentSceneIndex(int index)
+void SceneManager::SetCurrentScene(const std::string& name)
 {
-    m_CurrSceneIndex = index;
+	m_CurrSceneName = name;
+	m_CurrScene = m_Scenes[m_CurrSceneName];
 }
+
+bool SceneManager::ChangeScene(const std::string& name)
+{
+	std::unordered_map<std::string, SceneBase*>::iterator it = m_Scenes.find(name);
+	if (it== m_Scenes.end())return false;
+	m_WantsTo = it->second;
+	return true;
+}
+
 
 void SceneManager::PushScene(SceneBase* scene)
 {
-    scene->INITIALIZE();
-    m_Scenes.push_back(scene);
+	scene->INITIALIZE();
+	m_Scenes.insert({scene->GetName(), scene});
+}
+
+void SceneManager::SetCurrentScene(SceneBase* scene)
+{
+	m_CurrSceneName = scene->GetName();
+	m_CurrScene = scene;
 }

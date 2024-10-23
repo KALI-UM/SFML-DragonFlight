@@ -27,6 +27,7 @@ public:
 	virtual void SetFillColor(int r, int g, int b, int a = 255);		//SetColor客 悼老
 	virtual void SetOutlineColor(const sf::Color& color);				//SetColor客 悼老
 	virtual void SetOutlineColor(int r, int g, int b, int a = 255);		//SetColor客 悼老
+	sf::FloatRect GetFloatRect()const;
 
 	sf::Vector2u GetFrame() const;
 	void SetFrame(unsigned int x, unsigned int y);

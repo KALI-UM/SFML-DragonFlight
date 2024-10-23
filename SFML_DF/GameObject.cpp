@@ -33,9 +33,31 @@ GameObject::~GameObject()
 		delete drawable;
 }
 
+bool GameObject::INITIALIZE()
+{
+	bool result;
+	result = Initialize();
+	RESET();
+	return result;
+}
+
+void GameObject::RESET()
+{
+	Reset();
+}
+
+void GameObject::UPDATE(float dt)
+{
+	Update(dt);
+}
+
+void GameObject::RELEASE()
+{
+}
+
 bool GameObject::Initialize()
 {
-	return false;
+	return true;
 }
 
 void GameObject::Reset()
@@ -44,7 +66,6 @@ void GameObject::Reset()
 
 void GameObject::Update(float dt)
 {
-
 }
 
 void GameObject::SetIsValid(bool value)

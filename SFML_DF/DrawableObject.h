@@ -55,6 +55,7 @@ public:
 	std::string GetName()const { return m_Name; }
 	void SetName(const std::string& name) { m_Name = name; }
 
+	virtual sf::FloatRect GetFloatRect()const=0;
 	virtual sf::Color GetColor() const = 0;
 	virtual void SetColor(const sf::Color& color) = 0;
 	virtual void SetColor(int r, int g, int b, int a = 255) = 0;

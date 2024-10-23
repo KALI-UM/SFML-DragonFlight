@@ -28,7 +28,7 @@ public:
 	void SetFillColor(int r, int g, int b, int a = 255);
 	void SetOutlineColor(const sf::Color& color);
 	void SetOutlineColor(int r, int g, int b, int a = 255);
-
+	sf::FloatRect GetFloatRect()const;
 private:
 	sf::Text m_Text;
 };

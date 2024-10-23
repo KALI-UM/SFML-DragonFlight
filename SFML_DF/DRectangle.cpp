@@ -80,12 +80,12 @@ void DRectangle::SetSize(const sf::Vector2f& widthheight)
 	m_FloatRect.height = widthheight.y;
 }
 
-sf::FloatRect DRectangle::GetFRect() const
+sf::FloatRect DRectangle::GetFloatRect() const
 {
 	return m_FloatRect;
 }
 
-void DRectangle::SetFRect(const sf::FloatRect& frect)
+void DRectangle::SetFloatRect(const sf::FloatRect& frect)
 {
 	m_Rectangle.setPosition(frect.getPosition());
 	SetSize(frect.getSize());

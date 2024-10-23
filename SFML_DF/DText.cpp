@@ -141,3 +141,8 @@ void DText::SetOutlineColor(int r, int g, int b, int a)
 {
 	SetOutlineColor(sf::Color(r, g, b, a));
 }
+
+sf::FloatRect DText::GetFloatRect() const
+{
+	return m_Text.getGlobalBounds();
+}

@@ -15,6 +15,7 @@ float Scene_Test::m_XPosSet[5] = { 55, 163, 271, 379, 487 };
 float Scene_Test::m_YPos;
 
 Scene_Test::Scene_Test()
+	:SceneBase("Test")
 {
 	m_YPos = GM->GetWindow()->getSize().y / 2 - 400;
 }

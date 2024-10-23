@@ -182,6 +182,11 @@ void DLine::SetThickness(float thick)
 	}
 }
 
+sf::FloatRect DLine::GetFloatRect() const
+{
+	return m_Line.m_Vertices.getBounds();
+}
+
 bool DLine::GetIsVisible() const
 {
 	return (m_Line.getColor().a != sf::Color::Transparent.a) && GetIsValid();
@@ -189,7 +194,7 @@ bool DLine::GetIsVisible() const
 
 void DLine::SetOriginCenter()
 {
-	m_Line.setOrigin(m_Line.getLocalBounds().width / 2, m_Line.getLocalBounds().height / 2);
+	//m_Line.setOrigin(m_Line.getLocalBounds().width / 2, m_Line.getLocalBounds().height / 2);
 }
 
 sf::Color DLine::GetColor() const
