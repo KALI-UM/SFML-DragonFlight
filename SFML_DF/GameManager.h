@@ -9,6 +9,13 @@ namespace sf
 //class ResourceManager<sf::Texture>;
 //class ResourceManager<sf::Font>;
 
+enum class GameMode
+{
+	Debug,
+	Cheat,
+	Normal
+};
+
 class InputManager;
 class SceneManager;
 class DrawableObject;
@@ -37,6 +44,7 @@ public:
 
 	sf::RenderWindow* GetWindow();
 	void PushDrawableObject(DrawableObject* dobj);
+	const GameMode& GetGameMode()const;
 private:
 	sf::RenderWindow* m_MainWindow;
 	std::priority_queue<DrawableObject*, std::vector<DrawableObject*>, PriorityComp> m_DrawQue;
@@ -45,5 +53,7 @@ private:
 	//ResourceManager<sf::Font>* const		m_RFontManager;
 	InputManager* const						m_InputManager;
 	SceneManager* const						m_SceneManager;
+
+	GameMode								m_GameMode;
 };
 

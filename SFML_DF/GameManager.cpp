@@ -51,6 +51,17 @@ void GameManager::UpdateEvent(const sf::Event& ev)
 
 void GameManager::Update(float dt)
 {
+	if (IM->GetKeyDown(sf::Keyboard::F1))
+	{
+		std::cout << "Play Mode - Debug\n";
+		m_GameMode = GameMode::Debug;
+	}
+	if (IM->GetKeyDown(sf::Keyboard::F2))
+	{
+		std::cout << "Play Mode - Normal\n";
+		m_GameMode = GameMode::Normal;
+	}
+
 	GetSceneManager()->Update(dt);
 	GetSceneManager()->PushToDrawQue();
 }
@@ -77,6 +88,11 @@ sf::RenderWindow* GameManager::GetWindow()
 void GameManager::PushDrawableObject(DrawableObject* dobj)
 {
 	m_DrawQue.push(dobj);
+}
+
+const GameMode& GameManager::GetGameMode() const
+{
+	return m_GameMode;
 }
 
 bool PriorityComp::operator()(DrawableObject*& lhs, DrawableObject*& rhs)

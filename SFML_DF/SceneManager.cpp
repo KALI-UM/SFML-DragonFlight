@@ -17,6 +17,14 @@ void SceneManager::PushToDrawQue()
     m_Scenes[m_CurrSceneIndex]->PushToDrawQue();
 }
 
+void SceneManager::Release()
+{
+    for (auto& scene : m_Scenes)
+    {
+        scene->RELEASE();
+    }
+}
+
 int SceneManager::GetCurrentSceneIndex() const
 {
     return m_CurrSceneIndex;
