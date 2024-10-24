@@ -1,7 +1,7 @@
 #pragma once
 #include "SceneBase.h"
 class Background_Lobby;
-class SoundObject;
+class SoundPlayer;
 class DustEffect;
 class GameStart;
 class Scene_Lobby :
@@ -20,7 +20,7 @@ protected:
 
 private:
 	Background_Lobby* m_LobbyImage;
-	SoundObject* m_SoundObject;
+	SoundPlayer* m_SoundPlayer;
 	std::vector< DustEffect*> m_Effects;
 
 	GameStart* m_GameStart;

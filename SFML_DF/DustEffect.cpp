@@ -40,10 +40,10 @@ void DustEffect::Reset()
 	m_Particles[3]->Transform()->rotate(210);
 	m_Particles[4]->Transform()->rotate(0);
 
-	m_Particles[0]->Transform()->setScale(0.8, 0.8);
-	m_Particles[1]->Transform()->setScale(0.6, 0.6);
+	m_Particles[0]->Transform()->setScale(0.8f, 0.8f);
+	m_Particles[1]->Transform()->setScale(0.6f, 0.6f);
 	m_Particles[2]->Transform()->setScale(1, 1);
-	m_Particles[3]->Transform()->setScale(0.2, 0.2);
+	m_Particles[3]->Transform()->setScale(0.2f, 0.2f);
 	m_Particles[4]->Transform()->setScale(1, 1);
 }
 
