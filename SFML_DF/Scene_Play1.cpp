@@ -13,8 +13,6 @@
 #include "P1_Background.h"
 #include "SoundPlayer.h"
 #include "DustEffect.h"
-#include "P1_Score.h"
-#include "P1_Background.h"
 
 float Scene_Play1::m_XPosSet[5] = { 55, 163, 271, 379, 487 };
 float Scene_Play1::m_YPos;
@@ -164,12 +162,12 @@ void Scene_Play1::MonsterReset()
 	{
 		if (i == (int)m_SpawnPos || i == (int)m_SpawnPos + 1)
 		{
-			std::cout << i << "¹øÂ° ¸ó½ºÅÍ ¾È½ºÆù\n";
+			std::cout << i << "ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½È½ï¿½ï¿½ï¿½\n";
 			m_Monsters[i]->SetIsValid(false);
 		}
 		else
 		{
-			std::cout << i << "¹øÂ° ¸ó½ºÅÍ ½ºÆù\n";
+			std::cout << i << "ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½\n";
 			m_Monsters[i]->SetIsValid(true);
 			m_Monsters[i]->Set(m_MonsterSpeed, { m_XPosSet[i], m_YPos - 20 }, { 0.6f, 0.6f });
 		}

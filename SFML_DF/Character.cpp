@@ -63,7 +63,7 @@ int Character::RectCheck()
 			if ((*m_Enemy)[i]->m_monster->GetIsValid() == true)
 			{
 				m_HitBox->SetOutlineColor(sf::Color::Red);
-				std::cout << i << "번째 몬스터랑 부딫침\n";
+				std::cout << i << "번째 몬스터랑 부딪침\n";
 				rectcheck = i;
 				break;
 			}

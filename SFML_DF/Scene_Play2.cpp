@@ -86,7 +86,7 @@ void Scene_Play2::Update(float dt)
 		m_P2_Background->Set2(m_BackgoundSpeed, { m_BG_XPos , m_BG_YPos }, { 1, 1 });
 	}
 
-	if (m_Player->RectCheck() == true)
+	if (m_Player->RectCheck()!=-1)
 	{
 		m_Player->SetStopCharacter();
 		for (int i = 0; i < m_Monsters.size(); i++)
