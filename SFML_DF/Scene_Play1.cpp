@@ -9,15 +9,10 @@
 #include "DLine.h"
 #include "Character.h"
 #include "Monster.h"
-<<<<<<< HEAD
-#include "Score.h"
-#include "Background.h"
-#include "SoundPlayer.h"
-#include "DustEffect.h"
-=======
 #include "P1_Score.h"
 #include "P1_Background.h"
->>>>>>> origin/master
+#include "SoundPlayer.h"
+#include "DustEffect.h"
 
 float Scene_Play1::m_XPosSet[5] = { 55, 163, 271, 379, 487 };
 float Scene_Play1::m_YPos;

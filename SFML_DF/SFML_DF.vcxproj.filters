@@ -1,91 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-<<<<<<< HEAD
-    <ClCompile Include="P1_Background.cpp" />
-    <ClCompile Include="Background_Lobby.cpp" />
-    <ClCompile Include="Character.cpp" />
-    <ClCompile Include="DAnimation.cpp" />
-    <ClCompile Include="DCircle.cpp" />
-    <ClCompile Include="DLine.cpp" />
-    <ClCompile Include="DRectangle.cpp" />
-    <ClCompile Include="DShape.cpp" />
-    <ClCompile Include="DSprite.cpp" />
-    <ClCompile Include="DText.cpp" />
-    <ClCompile Include="DustEffect.cpp" />
-    <ClCompile Include="EffectObject.cpp" />
-    <ClCompile Include="Framework.cpp" />
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="P1_GameOver.cpp" />
-    <ClCompile Include="GameStart.cpp" />
-    <ClCompile Include="InputManager.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Monster.cpp" />
-    <ClCompile Include="MouseCursor.cpp" />
-    <ClCompile Include="SceneBase.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="Scene_P1_GameOver.cpp" />
-    <ClCompile Include="Scene_Lobby.cpp" />
-    <ClCompile Include="Scene_Test.cpp" />
-    <ClCompile Include="P1_Score.cpp" />
-    <ClCompile Include="SoundObject.cpp" />
-    <ClCompile Include="Scene_Play1.cpp" />
-    <ClCompile Include="Scene_Play2.cpp" />
-    <ClCompile Include="P2_Background.cpp" />
-    <ClCompile Include="P1_Success.cpp" />
-    <ClCompile Include="Scene_P1_Success.cpp" />
-    <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="P2_Success.cpp" />
-    <ClCompile Include="P2_GameOver.cpp" />
-    <ClCompile Include="Scene_P2_Success.cpp" />
-    <ClCompile Include="Scene_P2_GameOver.cpp" />
-    <ClCompile Include="P2_Score.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="P1_Background.h" />
-    <ClInclude Include="Background_Lobby.h" />
-    <ClInclude Include="Character.h" />
-    <ClInclude Include="DAnimation.h" />
-    <ClInclude Include="DCircle.h" />
-    <ClInclude Include="DLine.h" />
-    <ClInclude Include="DrawableObject.h" />
-    <ClInclude Include="DRectangle.h" />
-    <ClInclude Include="DShape.h" />
-    <ClInclude Include="DSprite.h" />
-    <ClInclude Include="DText.h" />
-    <ClInclude Include="DustEffect.h" />
-    <ClInclude Include="EffectObject.h" />
-    <ClInclude Include="Framework.h" />
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="P1_GameOver.h" />
-    <ClInclude Include="GameStart.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="Monster.h" />
-    <ClInclude Include="MouseCursor.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Scene_P1_GameOver.h" />
-    <ClInclude Include="Scene_Lobby.h" />
-    <ClInclude Include="Scene_Test.h" />
-    <ClInclude Include="P1_Score.h" />
-    <ClInclude Include="Singleton.h" />
-    <ClInclude Include="SoundObject.h" />
-    <ClInclude Include="Scene_Play1.h" />
-    <ClInclude Include="Scene_Play2.h" />
-    <ClInclude Include="P2_Background.h" />
-    <ClInclude Include="P1_Success.h" />
-    <ClInclude Include="Scene_P1_Success.h" />
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="P2_Success.h" />
-    <ClInclude Include="P2_GameOver.h" />
-    <ClInclude Include="Scene_P2_Success.h" />
-    <ClInclude Include="Scene_P2_GameOver.h" />
-    <ClInclude Include="P2_Score.h" />
-=======
     <Filter Include="소스 파일">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -151,19 +66,10 @@
     <ClCompile Include="DLine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="AABB.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Monster.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Background.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Lobby.cpp">
@@ -178,10 +84,7 @@
     <ClCompile Include="Framework.cpp">
       <Filter>GameEngine</Filter>
     </ClCompile>
-    <ClCompile Include="GameOver.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="SoundPlayer.cpp">
+    <ClCompile Include="SoundObject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="MouseCursor.cpp">
@@ -193,13 +96,58 @@
     <ClCompile Include="EffectObject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene_GameOver.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="DustEffect.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SoundObject.cpp">
+    <ClCompile Include="P1_Background.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P1_GameOver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P2_GameOver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P2_Background.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P2_Score.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P2_Success.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_P1_GameOver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_P2_GameOver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_P2_Success.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Play1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Play2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_P1_Success.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P1_Score.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P1_Success.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundPlayer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -252,19 +200,10 @@
     <ClInclude Include="DLine.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="AABB.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Monster.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Score.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Background.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Background_Lobby.h">
@@ -279,10 +218,7 @@
     <ClInclude Include="Scene_Test.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="GameOver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="SoundPlayer.h">
+    <ClInclude Include="SoundObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="MouseCursor.h">
@@ -294,15 +230,56 @@
     <ClInclude Include="EffectObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene_GameOver.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
     <ClInclude Include="DustEffect.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="SoundObject.h">
+    <ClInclude Include="P1_Background.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
->>>>>>> origin/master
+    <ClInclude Include="Bullet.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="P1_GameOver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="P2_GameOver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="P2_Background.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="P2_Score.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="P2_Success.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_P1_GameOver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_P2_GameOver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_P2_Success.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Play1.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Play2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_P1_Success.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="P1_Score.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="P1_Success.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundPlayer.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

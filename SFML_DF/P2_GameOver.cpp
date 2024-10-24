@@ -55,6 +55,3 @@ void P2_GameOver::Update(float dt)
     }
 }
 
-void P2_GameOver::FadeOutBackGround(float speed)
-{
-}
