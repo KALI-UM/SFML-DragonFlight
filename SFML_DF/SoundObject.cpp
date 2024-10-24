@@ -5,13 +5,18 @@
 SoundObject::SoundObject(const std::string& filepath, float volume, SoundType type)
 	:m_IsValid(false), m_Type(type), m_DefaultVolume(volume), m_FadeOutSpeed(-1)
 {
-	sf::SoundBuffer* soundbuff = ResourceManager<sf::SoundBuffer>::GetInstance()->GetByFilepath("sound/ButtonClick.wav");
+	sf::SoundBuffer* soundbuff = ResourceManager<sf::SoundBuffer>::GetInstance()->GetByFilepath(filepath);
 	if (soundbuff)
 	{
 		SetIsValid(true);
 		m_Sound.setBuffer(*soundbuff);
 		m_Sound.setVolume(m_DefaultVolume * GM->GetGlobalVolume());
 	}
+
+	//if (m_Type == SoundType::Effect)
+	//	m_Sound.setLoop(false);
+	//else if (m_Type == SoundType::BGM)
+	//	m_Sound.setLoop(true);
 }
 
 SoundObject::SoundObject(const SoundObject& other)
@@ -39,11 +44,11 @@ SoundObject::~SoundObject()
 {
 }
 
-void SoundObject::Play( )
+void SoundObject::Play()
 {
 	if (m_Type == SoundType::BGM)
 	{
-		if(!GetIsPlaying())
+		if (!GetIsPlaying())
 			m_Sound.play();
 	}
 	else
@@ -59,7 +64,8 @@ void SoundObject::Pause()
 
 void SoundObject::Stop()
 {
-	m_Sound.stop();
+	if (GetIsPlaying())
+		m_Sound.stop();
 }
 
 void SoundObject::SetLoop(bool loop)
@@ -69,6 +75,7 @@ void SoundObject::SetLoop(bool loop)
 
 void SoundObject::Update(float dt)
 {
+	dt = FM->GetRealDeltaTime();
 	if (m_FadeOutSpeed > 0)
 	{
 		float currv = m_Sound.getVolume() - dt * m_FadeOutSpeed;
@@ -87,7 +94,7 @@ void SoundObject::Update(float dt)
 
 bool SoundObject::GetIsPlaying() const
 {
-	return m_Sound.getStatus() == sf::SoundSource::Playing;
+	return ((int)m_Sound.getStatus() == (int)sf::Sound::Status::Playing);
 }
 
 void SoundObject::StartFadeOut(float duration)

@@ -14,6 +14,7 @@ class Monster;
 class Score;
 class P1_Backgound;
 class GameStart;
+class DustEffect;
 
 class Scene_Play1 : public SceneBase
 {
@@ -44,5 +45,12 @@ private:
 	static float m_BG_YPos;
 	static float m_BG_YTopPos;
 	static float m_SpeedVariable;
+	
+	bool m_Start = false;
+	float m_StartTime;
+	float m_StartPause;
+	float m_EndTime;
+	float m_EndPause;
+	std::vector< DustEffect*> m_Effects;
 };
 

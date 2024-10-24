@@ -18,13 +18,13 @@ protected:
 	sf::Clock clock;
 	float m_TimeScale = 1.f;
 
-	float time = 0.f;
+	float m_Time = 0.f;
 	float m_DeltaTime = 0.f;
 	float m_RealTime = 0.f;
 	float m_RealDeltaTime = 0.f;
 
 public:
-	float GetTime() const { return time; }
+	float GetTime() const { return m_Time; }
 	float GetDeltaTime() const { return m_DeltaTime; }
 	float GetRealTime() const { return m_RealTime; }
 	float GetRealDeltaTime() const { return m_RealDeltaTime; }
@@ -37,6 +37,7 @@ public:
 	virtual void Release();
 };
 
+#define FM (Framework::GetInstance())
 #define GM (GameManager::GetInstance())
 #define IM (InputManager::GetInstance())
 #define SM (SceneManager::GetInstance())

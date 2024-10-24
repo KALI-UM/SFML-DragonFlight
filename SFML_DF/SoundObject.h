@@ -40,7 +40,5 @@ private:
 	float			m_DefaultVolume;
 	float			m_FadeOutSpeed;
 	//float			m_FadeInSpeed;
-
-
 };
 

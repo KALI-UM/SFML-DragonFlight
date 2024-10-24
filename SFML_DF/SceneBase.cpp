@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "SceneBase.h"
-#include "GameObject.h"
+#include "SoundPlayer.h"
 
 SceneBase::SceneBase(const std::string& name)
 	:m_Name(name)
@@ -17,7 +17,10 @@ SceneBase::~SceneBase()
 
 bool SceneBase::INITIALIZE()
 {
+	m_SoundPlayer = new SoundPlayer();
+	m_GameObjects.push_back(m_SoundPlayer);
 	bool result = Initialize();
+
 	for (auto& gobj : m_GameObjects)
 	{
 		result &= gobj->INITIALIZE();
@@ -47,6 +50,8 @@ void SceneBase::UPDATE(float dt)
 
 void SceneBase::EXIT()
 {
+	FM->SetTimeScale(1);
+	m_SoundPlayer->StopAllSound();
 	Exit();
 }
 

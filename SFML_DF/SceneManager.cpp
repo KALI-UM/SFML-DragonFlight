@@ -24,7 +24,10 @@ void SceneManager::Update(float dt)
 		m_WantsTo = nullptr;
 		m_CurrScene->RESET();
 	}
-	m_CurrScene->UPDATE(dt);
+	else
+	{
+		m_CurrScene->UPDATE(dt);
+	}
 }
 
 void SceneManager::PushToDrawQue()

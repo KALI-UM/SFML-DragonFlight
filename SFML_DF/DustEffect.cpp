@@ -3,7 +3,7 @@
 #include "DSprite.h"
 
 DustEffect::DustEffect()
-	:EffectObject(5, new DSprite())
+	:EffectObject(5, new DSprite(DrawType::Effect))
 {
 }
 

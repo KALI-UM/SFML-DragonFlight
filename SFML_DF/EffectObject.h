@@ -5,6 +5,7 @@ class DSprite;
 class DRectangle;
 class DCircle;
 class DLine;
+
 class EffectObject :
 	public GameObject
 {
@@ -21,6 +22,8 @@ public:
 
 	void Effect(float duration, const sf::Vector2f& point, float speed = 1.0f);
 
+	void SetUsingDeltaTime(bool dt);
+
 protected:
 	virtual void EffectPlay(float dt) = 0;
 	virtual void SetPosition() = 0;
@@ -29,5 +32,7 @@ protected:
 	float				m_PlayTime;			//타이머
 	float				m_Speed;
 	sf::Vector2f		m_Position;			//재생 위치
+
+	bool m_IsUsingDT;
 };
 

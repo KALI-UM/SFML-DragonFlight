@@ -54,6 +54,7 @@ bool EffectObject::Initialize()
 	for (auto& drawable : m_Particles)
 	{
 		SetDrawable(drawable);
+		drawable->SetPriority(90);
 	}
 
 	return true;
@@ -67,6 +68,8 @@ void EffectObject::Reset()
 
 void EffectObject::Update(float dt)
 {
+	if (!m_IsUsingDT)
+		dt = FM->GetRealDeltaTime();
 	m_PlayTime += dt;
 	EffectPlay(dt);
 
@@ -81,4 +84,9 @@ void EffectObject::Effect(float duration, const sf::Vector2f& point, float speed
 	m_Position = point;
 	m_Speed = speed;
 	SetPosition();
+}
+
+void EffectObject::SetUsingDeltaTime(bool dt)
+{
+	m_IsUsingDT = dt;
 }
