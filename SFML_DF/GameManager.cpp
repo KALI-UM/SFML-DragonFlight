@@ -50,7 +50,7 @@ bool GameManager::Initialize(sf::RenderWindow* window)
 	SM->PushScene(lobby);
 	SM->PushScene(test);
 	SM->PushScene(over);
-	SM->SetCurrentScene(over->GetName());
+	SM->SetCurrentScene(lobby->GetName());
 	return success;
 }
 
