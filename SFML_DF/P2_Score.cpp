@@ -21,6 +21,8 @@ bool P2_Score::Initialize()
 void P2_Score::Reset()
 {
 	m_scoreText->SetFillColor(sf::Color::White);
+	m_scoreText->SetOutlineColor(sf::Color::Black);
+	m_scoreText->SetOutlineThickness(2);
 	m_scoreText->Transform()->setPosition(0.f, 0.f);
 }
 

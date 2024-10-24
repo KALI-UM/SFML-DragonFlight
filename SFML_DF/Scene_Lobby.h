@@ -22,8 +22,8 @@ private:
 	Background_Lobby* m_LobbyImage;
 	std::vector< DustEffect*> m_Effects;
 
-	GameStart* m_GameStart;
-	bool m_Start = false;
-	float m_FadeSpeed;
+	GameStart*		m_GameStart;
+	bool			m_Start = false;
+	float			m_FadeSpeed;
 };
 

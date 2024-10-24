@@ -100,3 +100,8 @@ std::string SceneBase::GetName() const
 {
 	return m_Name;
 }
+
+SoundPlayer* SceneBase::GetSoundPlayer()
+{
+	return m_SoundPlayer;
+}

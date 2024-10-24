@@ -2,6 +2,7 @@
 #include "SceneBase.h"
 
 class P1_Success;
+class Button;
 class Scene_P1_Success : public SceneBase
 {
 public:
@@ -18,5 +19,6 @@ private:
 	P1_Success* m_SuccessUI;
 	bool m_Start = false;
 	float m_FadeSpeed;
+	Button* m_Button[2];
 };
 

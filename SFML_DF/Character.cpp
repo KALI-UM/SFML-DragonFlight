@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Character.h"
+#include "DAnimation.h"
 #include "DSprite.h"
 #include "DRectangle.h"
 #include "Monster.h"
@@ -14,7 +15,7 @@ Character::~Character()
 
 bool Character::Initialize()
 {
-	m_CharSprite = new DSprite("character/sunny.png");
+	m_CharSprite = new DAnimation("character/sunny_ani.png", { 4,1 }, 15);
 	m_HitBox = new DRectangle(sf::FloatRect(m_CharSprite->GetFloatRect()), sf::Color::Green, 1, sf::Color::Transparent, DrawType::Debug);
 	SetDrawable(m_CharSprite);
 	SetDrawable(m_HitBox);
@@ -71,7 +72,6 @@ int Character::RectCheck()
 		else
 		{
 			m_HitBox->SetOutlineColor(sf::Color::Green);
-
 		}
 	}
 	return rectcheck;

@@ -4,6 +4,8 @@
 #include "DRectangle.h"
 #include "Monster.h"
 #include "P2_Score.h"
+#include "SoundPlayer.h"
+#include "DustEffect.h"
 
 Bullet::Bullet()
 {
@@ -68,8 +70,19 @@ bool Bullet::BulletRectCheck()
 			{
 				rectcheck = true;
 				m_HitBox->SetOutlineColor(sf::Color::Red);
+				SM->GetSoundPlayer()->PlayEffect("sound/mon_die.wav");
 				(*m_Enemy)[i]->SetIsValid(false);
 				m_Score->m_IncreaseScore += 100;
+
+				for (auto& eff : *m_Effects)
+				{
+					if (!eff->GetIsValid())
+					{
+						eff->Effect(1.f, (*m_Enemy)[i]->GetDrawable()->Transform()->getPosition(), 10.f);
+						break;
+					}
+				}
+
 				return rectcheck;
 			}
 		}
@@ -89,5 +102,10 @@ void Bullet::getMonster(std::vector<Monster*>* mons)
 void Bullet::getScore(P2_Score* score)
 {
 	m_Score = score;
+}
+
+void Bullet::GetEffect(std::vector<DustEffect*>* effects)
+{
+	m_Effects = effects;
 }
 

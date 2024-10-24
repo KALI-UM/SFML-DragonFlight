@@ -18,7 +18,7 @@ public:
 
 	void PushToDrawQue();
 	std::string GetName()const;
-
+	SoundPlayer* GetSoundPlayer();
 protected:
 	virtual bool Initialize();
 	virtual void Reset();

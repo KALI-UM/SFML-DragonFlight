@@ -13,11 +13,12 @@ SoundPlayer::~SoundPlayer()
 bool SoundPlayer::Initialize()
 {
 	m_Effects.insert({ "sound/ButtonClick.wav", new SoundObject("sound/ButtonClick.wav", 100, SoundType::Effect) });
-	m_Effects.insert({ "sound/NextScene.wav", new SoundObject("sound/NextScene.wav", 100, SoundType::Effect) });
-	m_Effects.insert({ "sound/mon_die.wav", new SoundObject("sound/mon_die.wav", 100, SoundType::Effect) });
+	m_Effects.insert({ "sound/NextScene.wav", new SoundObject("sound/NextScene.wav", 80, SoundType::Effect) });
+	m_Effects.insert({ "sound/mon_die.wav", new SoundObject("sound/mon_die.wav", 50, SoundType::Effect) });
+	m_Effects.insert({ "sound/baby_dragon_die.wav", new SoundObject("sound/baby_dragon_die.wav", 70, SoundType::Effect) });
 
-	m_BGMs.insert({ "sound/dragon_flight.mp3", new SoundObject("sound/dragon_flight.mp3", 50, SoundType::BGM) });
-	m_BGMs.insert({ "sound/my_friend_dragon.mp3", new SoundObject("sound/my_friend_dragon.mp3", 50, SoundType::BGM) });
+	m_BGMs.insert({ "sound/dragon_flight.mp3", new SoundObject("sound/dragon_flight.mp3", 20, SoundType::BGM) });
+	m_BGMs.insert({ "sound/my_friend_dragon.mp3", new SoundObject("sound/my_friend_dragon.mp3", 20, SoundType::BGM) });
 
 	return true;
 }

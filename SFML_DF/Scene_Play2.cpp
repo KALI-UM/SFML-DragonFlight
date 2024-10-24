@@ -12,6 +12,8 @@
 #include "P2_Score.h"
 #include "P2_Background.h"
 #include "Bullet.h"
+#include "SoundPlayer.h"
+#include "DustEffect.h"
 
 float Scene_Play2::m_XPosSet[5] = { 55, 163, 271, 379, 487 };
 float Scene_Play2::m_YPos;
@@ -53,10 +55,6 @@ bool Scene_Play2::Initialize()
 
 	m_Player->getMonster(&m_Monsters);
 
-	for (int i = 0; i < m_Bullet.size(); i++)
-	{
-		m_Bullet[i]->getMonster(&m_Monsters);
-	}
 
 	m_GameObjects.push_back(m_P2_Background);
 	m_GameObjects.push_back(m_Player);
@@ -70,6 +68,21 @@ bool Scene_Play2::Initialize()
 		m_GameObjects.push_back(m_Monsters[i]);
 	}
 	m_GameObjects.push_back(m_Score);
+
+	m_Effects.resize(5);
+	for (auto& eff : m_Effects)
+	{
+		eff = new DustEffect();
+		eff->SetUsingDeltaTime(true);
+		m_GameObjects.push_back(eff);
+	}
+
+	for (int i = 0; i < m_Bullet.size(); i++)
+	{
+		m_Bullet[i]->getMonster(&m_Monsters);
+		m_Bullet[i]->GetEffect(&m_Effects);
+	}
+
 	return true;
 }
 
@@ -87,7 +100,7 @@ void Scene_Play2::Update(float dt)
 		m_P2_Background->Set2(m_BackgoundSpeed, { m_BG_XPos , m_BG_YPos }, { 1, 1 });
 	}
 
-	if (m_Player->RectCheck()!=-1)
+	if (m_Player->RectCheck() != -1)
 	{
 		m_Player->SetStopCharacter();
 		for (int i = 0; i < m_Monsters.size(); i++)
@@ -105,6 +118,7 @@ void Scene_Play2::Update(float dt)
 		{
 			if (m_Bullet[i]->GetIsValid() == false)
 			{
+				m_SoundPlayer->PlayEffect("sound/baby_dragon_die.wav");
 				m_Bullet[i]->Shoot(m_Player->GetDrawable()->Transform()->getPosition());
 				break;
 			}
@@ -112,7 +126,7 @@ void Scene_Play2::Update(float dt)
 	}
 
 	m_Score->m_scoreText->SetString("Score : " + std::to_string((int)(m_Score->m_IncreaseScore)));
-	
+
 	if (m_Score->m_IncreaseScore >= 3000)
 	{
 		SM->ChangeScene("P2_Success");
