@@ -64,7 +64,7 @@ void Background_Lobby::Update(float dt)
 		if (m_CurrvColorValue >= 255)
 		{
 			m_BackgroundMusic->stop();
-			SM->ChangeScene("Test");
+			SM->ChangeScene("Play1");
 		}
 	}
 }

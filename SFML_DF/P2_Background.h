@@ -2,11 +2,11 @@
 #include "GameObject.h"
 
 class DSprite;
-class P1_Backgound : public GameObject
+class P2_Background : public GameObject
 {
 public:
-	P1_Backgound();
-	~P1_Backgound();
+	P2_Background();
+	~P2_Background();
 
 	bool Initialize();
 	void Reset();
@@ -17,9 +17,8 @@ public:
 	void Set1(float speed, const sf::Vector2f& pos, const sf::Vector2f& scale = sf::Vector2f(1, 1));
 	void Set2(float speed, const sf::Vector2f& pos, const sf::Vector2f& scale = sf::Vector2f(1, 1));
 
-	DSprite* m_P1_Background1;
-	DSprite* m_P1_Background2;
-	
+	DSprite* m_P2_Background1;
+	DSprite* m_P2_Background2;
 
 protected:
 	float m_Speed;

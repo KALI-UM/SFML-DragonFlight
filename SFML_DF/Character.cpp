@@ -36,7 +36,7 @@ void Character::Update(float dt)
 {
 	if (IM->GetKey(sf::Keyboard::Left))
 	{
-		if (m_CharSprite->Transform()->getPosition().x > 0)
+		if (m_CharSprite->Transform()->getPosition().x - 72.5 > 0)
 		{
 			m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x - m_speed * dt, m_CharSprite->Transform()->getPosition().y);
 			m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
@@ -45,7 +45,7 @@ void Character::Update(float dt)
 	}
 	if (IM->GetKey(sf::Keyboard::Right))
 	{
-		if (m_CharSprite->Transform()->getPosition().x < 540)
+		if (m_CharSprite->Transform()->getPosition().x + 72.5 < 540)
 		{
 			m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x + m_speed * dt, m_CharSprite->Transform()->getPosition().y);
 			m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());

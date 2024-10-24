@@ -26,4 +26,10 @@ void Score::Reset()
 void Score::Update(float dt)
 {
     m_scoreText->SetString("Score : " + std::to_string((int)m_Score));
+    m_Score += 1000 * dt;
+
+    if (m_Score >= 40000)
+    {
+        SM->ChangeScene("Success");
+    }
 }
