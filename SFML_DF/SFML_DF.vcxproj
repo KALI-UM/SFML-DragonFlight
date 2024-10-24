@@ -177,6 +177,7 @@
     <ClCompile Include="Scene_Test.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="SoundObject.cpp" />
+    <ClCompile Include="SoundPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABB.h" />
@@ -214,6 +215,7 @@
     <ClInclude Include="Score.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SoundObject.h" />
+    <ClInclude Include="SoundPlayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

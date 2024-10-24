@@ -1,30 +1,46 @@
 #pragma once
-#include "GameObject.h"
+#include "SFML/Audio.hpp"
 
 namespace sf
 {
 	class Sound;
 }
 
-enum class SoundEffect
+enum class SoundType
 {
-	Click,
-	NextScene,
+	Effect,
+	BGM
 };
 
-class SoundObject :
-    public GameObject
+class SoundObject
 {
 public:
-	SoundObject();
-	~SoundObject();  
+	SoundObject(const std::string& filepath, float volume, SoundType type);
+	SoundObject(const SoundObject& other);
+	SoundObject(SoundObject&& other);
+	~SoundObject();
 
-	bool Initialize() override;
-	void Reset()override;
-	void Update(float dt)override;
+	void Play();
+	void Pause();
+	void Stop();
+	void SetLoop(bool loop);
 
-	void PlayEffect(const SoundEffect& effect);
+	void Update(float dt);
+	bool GetIsValid()const { return m_IsValid; }
+	void SetIsValid(bool valid) { m_IsValid = valid; }
+	SoundType GetType()const { return m_Type; }
+	bool GetIsPlaying()const;
+	void StartFadeOut(float duration);
+	//void StartFadeIn(float duration);
 private:
-	std::vector<sf::Sound*> m_Effect;
+	bool			m_IsValid;
+	const SoundType	m_Type;
+	sf::Sound		m_Sound;
+
+	float			m_DefaultVolume;
+	float			m_FadeOutSpeed;
+	//float			m_FadeInSpeed;
+
+
 };
 

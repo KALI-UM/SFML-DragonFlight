@@ -53,6 +53,7 @@ void GameObject::UPDATE(float dt)
 
 void GameObject::RELEASE()
 {
+	Release();
 }
 
 bool GameObject::Initialize()
@@ -65,6 +66,10 @@ void GameObject::Reset()
 }
 
 void GameObject::Update(float dt)
+{
+}
+
+void GameObject::Release()
 {
 }
 

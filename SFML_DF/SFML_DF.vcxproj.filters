@@ -96,7 +96,7 @@
     <ClCompile Include="GameOver.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SoundObject.cpp">
+    <ClCompile Include="SoundPlayer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="MouseCursor.cpp">
@@ -108,13 +108,14 @@
     <ClCompile Include="EffectObject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Scene_GameOver.cpp">
       <Filter>Scene</Filter>
-=======
+    </ClCompile>
     <ClCompile Include="DustEffect.cpp">
       <Filter>소스 파일</Filter>
->>>>>>> origin/master
+    </ClCompile>
+    <ClCompile Include="SoundObject.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -196,7 +197,7 @@
     <ClInclude Include="GameOver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="SoundObject.h">
+    <ClInclude Include="SoundPlayer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="MouseCursor.h">
@@ -208,13 +209,14 @@
     <ClInclude Include="EffectObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Scene_GameOver.h">
       <Filter>Scene</Filter>
-=======
+    </ClInclude>
     <ClInclude Include="DustEffect.h">
       <Filter>헤더 파일</Filter>
->>>>>>> origin/master
+    </ClInclude>
+    <ClInclude Include="SoundObject.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

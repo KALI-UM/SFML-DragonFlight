@@ -30,6 +30,7 @@ protected:
 	virtual bool Initialize();
 	virtual void Reset();
 	virtual void Update(float dt);
+	virtual void Release();
 
 private:
 	const int	m_Id;

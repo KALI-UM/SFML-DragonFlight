@@ -3,7 +3,7 @@
 #include "Background_Lobby.h"
 #include "MouseCursor.h"
 #include "DustEffect.h"
-#include "SoundObject.h"
+#include "SoundPlayer.h"
 #include "GameStart.h"
 
 Scene_Lobby::Scene_Lobby()
@@ -18,8 +18,8 @@ Scene_Lobby::~Scene_Lobby()
 bool Scene_Lobby::Initialize()
 {
 	m_LobbyImage = new Background_Lobby();
-	m_SoundObject = new SoundObject();
-	m_GameObjects.push_back(m_SoundObject);
+	m_SoundPlayer = new SoundPlayer();
+	m_GameObjects.push_back(m_SoundPlayer);
 	m_GameObjects.push_back(new MouseCursor());
 	m_Effects.resize(5);
 	for (auto& eff : m_Effects)
@@ -36,15 +36,16 @@ bool Scene_Lobby::Initialize()
 
 void Scene_Lobby::Reset()
 {
-	m_FadeSpeed = 30.0f;
+	m_FadeSpeed = 3.0f;
 }
 
 void Scene_Lobby::Update(float dt)
 {
+	m_SoundPlayer->PlayBGM("sound/my_friend_dragon.mp3");
 	if (IM->GetMouseDown(sf::Mouse::Left) || IM->GetKeyDown(sf::Keyboard::Enter))
 	{
 		m_LobbyImage->FadeOutBackGround(m_FadeSpeed);
-		m_SoundObject->PlayEffect(SoundEffect::Click);
+		m_SoundPlayer->PlayEffect("sound/ButtonClick.wav");
 
 		for (auto& eff : m_Effects)
 		{
