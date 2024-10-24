@@ -108,15 +108,13 @@
     <ClCompile Include="EffectObject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Scene_GameOver.cpp">
       <Filter>Scene</Filter>
-=======
+    </ClCompile>
     <ClCompile Include="DustEffect.cpp">
       <Filter>소스 파일</Filter>
->>>>>>> origin/master
     </ClCompile>
-  </ItemGroup>
+	  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>헤더 파일</Filter>
@@ -208,13 +206,11 @@
     <ClInclude Include="EffectObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Scene_GameOver.h">
       <Filter>Scene</Filter>
-=======
+    </ClInclude>
     <ClInclude Include="DustEffect.h">
       <Filter>헤더 파일</Filter>
->>>>>>> origin/master
     </ClInclude>
   </ItemGroup>
 </Project>
