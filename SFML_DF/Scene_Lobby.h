@@ -20,7 +20,6 @@ protected:
 
 private:
 	Background_Lobby* m_LobbyImage;
-	SoundPlayer* m_SoundPlayer;
 	std::vector< DustEffect*> m_Effects;
 
 	GameStart* m_GameStart;

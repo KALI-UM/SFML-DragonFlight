@@ -25,14 +25,14 @@ public:
 	void Update(float dt)override;
 	void Release() override;
 
+	void StopAllSound();
 	void PlayEffect(const std::string& filepath);
 	void PlayBGM(const std::string& filepath);
+	void StopBGM(const std::string& filepath);
 
 	//void EffectFadeOut(const std::string& filepath, float duration);
-	void BGMFadeOut(const std::string& filepath, float duration);
+	void FadeOutBGM(const std::string& filepath, float duration);
 private:
 	std::unordered_map<std::string, SoundObject*> m_Effects;
 	std::unordered_map<std::string, SoundObject*> m_BGMs;
-
-	std::vector<SoundObject*> m_BGM;
 };

@@ -1,7 +1,7 @@
 #pragma once
 
 class GameObject;
-
+class SoundPlayer;
 class SceneBase
 {
 public:
@@ -26,7 +26,8 @@ protected:
 	virtual void Exit();
 	virtual void Release();
 
-	std::vector<GameObject*> m_GameObjects;
-	const std::string m_Name;
+	std::vector<GameObject*>	m_GameObjects;
+	SoundPlayer*				m_SoundPlayer;
+	const std::string			m_Name;
 };
 

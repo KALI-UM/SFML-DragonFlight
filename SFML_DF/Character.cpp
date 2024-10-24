@@ -53,28 +53,28 @@ void Character::Update(float dt)
 	}
 }
 
-bool Character::RectCheck()
+int Character::RectCheck()
 {
-	bool rectcheck = false;
+	int rectcheck = -1;
 	for (int i = 0; i < m_Enemy->size(); i++)
 	{
 		if (m_CharSprite->GetFloatRect().intersects((*m_Enemy)[i]->m_monster->GetFloatRect()))
 		{
-			if((*m_Enemy)[i]->m_monster->GetIsValid() == true)
+			if ((*m_Enemy)[i]->m_monster->GetIsValid() == true)
 			{
 				m_HitBox->SetOutlineColor(sf::Color::Red);
 				std::cout << i << "번째 몬스터랑 부딫침\n";
-				rectcheck = true;
-				return true;
+				rectcheck = i;
+				break;
 			}
 		}
-	}
+		else
+		{
+			m_HitBox->SetOutlineColor(sf::Color::Green);
 
-	if (!rectcheck)
-	{
-		m_HitBox->SetOutlineColor(sf::Color::Green);
+		}
 	}
-	return false;
+	return rectcheck;
 }
 
 void Character::SetStopCharacter()

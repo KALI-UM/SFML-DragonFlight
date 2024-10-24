@@ -65,7 +65,7 @@ bool GameManager::Initialize(sf::RenderWindow* window)
 	SM->PushScene(play2);
 	SM->PushScene(suc1);
 	SM->PushScene(suc2);
-	SM->SetCurrentScene(play2->GetName());
+	SM->SetCurrentScene(lobby->GetName());
 	return success;
 }
 

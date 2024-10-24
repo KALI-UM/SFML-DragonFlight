@@ -17,7 +17,7 @@ void Framework::Do()
         m_RealDeltaTime = m_DeltaTime = dt.asSeconds();
         m_DeltaTime *= m_TimeScale;
         m_RealTime += m_RealDeltaTime;
-        time += m_DeltaTime;
+        m_Time += m_DeltaTime;
 
         // 이벤트 루프
         IM->Clear();

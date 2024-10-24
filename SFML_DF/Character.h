@@ -15,7 +15,7 @@ public:
 	void Reset();
 	void Update(float dt);
 
-	bool RectCheck();
+	int RectCheck();						//true면 해당 몬스터의 인덱스를 false면 -1반환
 	void SetStopCharacter();
 
 	void getMonster(std::vector<Monster*> *mons);
