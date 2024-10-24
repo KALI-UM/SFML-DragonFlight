@@ -36,17 +36,21 @@ void Character::Update(float dt)
 {
 	if (IM->GetKey(sf::Keyboard::Left))
 	{
-		m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x - m_speed * dt, m_CharSprite->Transform()->getPosition().y);
-		m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
+		if (m_CharSprite->Transform()->getPosition().x > 0)
+		{
+			m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x - m_speed * dt, m_CharSprite->Transform()->getPosition().y);
+			m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
+		}
 
 	}
 	if (IM->GetKey(sf::Keyboard::Right))
 	{
-		m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x + m_speed * dt, m_CharSprite->Transform()->getPosition().y);
-		m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
+		if (m_CharSprite->Transform()->getPosition().x < 540)
+		{
+			m_CharSprite->Transform()->setPosition(m_CharSprite->Transform()->getPosition().x + m_speed * dt, m_CharSprite->Transform()->getPosition().y);
+			m_HitBox->SetFloatRect(m_CharSprite->GetFloatRect());
+		}
 	}
-
-	RectCheck();
 }
 
 bool Character::RectCheck()
@@ -56,17 +60,22 @@ bool Character::RectCheck()
 	{
 		if (m_CharSprite->GetFloatRect().intersects((*m_Enemy)[i]->m_monster->GetFloatRect()))
 		{
-			m_HitBox->SetOutlineColor(sf::Color::Red);
-			rectcheck = true;
-			return true;
+			if((*m_Enemy)[i]->m_monster->GetIsValid() == true)
+			{
+				m_HitBox->SetOutlineColor(sf::Color::Red);
+				std::cout << i << "번째 몬스터랑 부딫침\n";
+				rectcheck = true;
+				return true;
+			}
 		}
 	}
 
 	if (!rectcheck)
 	{
 		m_HitBox->SetOutlineColor(sf::Color::Green);
-		return false;
+		rectcheck = false;
 	}
+	return false;
 }
 
 void Character::SetStopCharacter()

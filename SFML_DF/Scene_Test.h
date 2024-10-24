@@ -24,6 +24,7 @@ public:
 	bool Initialize() override;
 	void Update(float dt)override;
 	void Reset() override;
+	void MonsterReset();
 
 	Character* m_Player;
 	std::vector<Monster*> m_Monsters;

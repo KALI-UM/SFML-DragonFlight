@@ -20,6 +20,7 @@ bool Scene_GameOver::Initialize()
 
 void Scene_GameOver::Reset()
 {
+    m_FadeSpeed = 30.f;
 }
 
 void Scene_GameOver::Update(float dt)

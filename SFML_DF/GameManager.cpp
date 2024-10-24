@@ -3,6 +3,7 @@
 #include "SFML/Window.hpp"
 #include "Scene_Test.h"
 #include "Scene_Lobby.h"
+#include "Scene_GameOver.h"
 
 GameManager::GameManager()
 	:m_MainWindow(nullptr),
@@ -45,9 +46,11 @@ bool GameManager::Initialize(sf::RenderWindow* window)
 
 	Scene_Lobby* lobby = new Scene_Lobby();
 	Scene_Test* test = new Scene_Test();
+	Scene_GameOver* over = new Scene_GameOver();
 	SM->PushScene(lobby);
 	SM->PushScene(test);
-	SM->SetCurrentScene(lobby->GetName());
+	SM->PushScene(over);
+	SM->SetCurrentScene(over->GetName());
 	return success;
 }
 

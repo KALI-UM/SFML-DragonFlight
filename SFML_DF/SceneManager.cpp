@@ -17,8 +17,7 @@ void SceneManager::Reset()
 
 void SceneManager::Update(float dt)
 {
-
-	if (m_WantsTo !=nullptr)
+	if (m_WantsTo != nullptr)
 	{
 		m_CurrScene->EXIT();
 		SetCurrentScene(m_WantsTo);
@@ -55,7 +54,7 @@ void SceneManager::SetCurrentScene(const std::string& name)
 bool SceneManager::ChangeScene(const std::string& name)
 {
 	std::unordered_map<std::string, SceneBase*>::iterator it = m_Scenes.find(name);
-	if (it== m_Scenes.end())return false;
+	if (it == m_Scenes.end())return false;
 	m_WantsTo = it->second;
 	return true;
 }
@@ -64,7 +63,7 @@ bool SceneManager::ChangeScene(const std::string& name)
 void SceneManager::PushScene(SceneBase* scene)
 {
 	scene->INITIALIZE();
-	m_Scenes.insert({scene->GetName(), scene});
+	m_Scenes.insert({ scene->GetName(), scene });
 }
 
 void SceneManager::SetCurrentScene(SceneBase* scene)

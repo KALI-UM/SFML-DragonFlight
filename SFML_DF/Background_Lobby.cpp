@@ -57,6 +57,7 @@ void Background_Lobby::Update(float dt)
 		m_Background[0]->SetColor(m_CurrvColorValue, m_CurrvColorValue, m_CurrvColorValue);
 		m_Background[1]->SetColor(m_CurrvColorValue, m_CurrvColorValue, m_CurrvColorValue);
 		m_BgmVolume = m_BgmVolume - (dt * m_FadeOutSpeed);
+
 		if (m_BgmVolume < 1)m_BgmVolume = 0;
 		m_BackgroundMusic->setVolume(m_BgmVolume * GM->GetGlobalVolume());
 

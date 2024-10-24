@@ -29,9 +29,7 @@ bool Scene_Lobby::Initialize()
 		m_GameObjects.push_back(eff);
 	}
 	return true;
-    m_LobbyImage = new Background_Lobby();
     m_GameStart = new GameStart();
-    m_GameObjects.push_back(m_LobbyImage);
     m_GameObjects.push_back(m_GameStart);
     return false;
 }
