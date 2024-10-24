@@ -15,6 +15,7 @@ public:
 	virtual ~DSprite();
 
 	void SetTexture(sf::Texture* tex);
+	void SetTexture(const std::string& filepath);
 	sf::FloatRect GetFloatRect()const;
 	//bool GetIsVisible()const;
 	void SetOriginCenter();

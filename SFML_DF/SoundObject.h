@@ -17,7 +17,7 @@ class SoundObject :
 {
 public:
 	SoundObject();
-	~SoundObject();
+	~SoundObject();  
 
 	bool Initialize() override;
 	void Reset()override;
