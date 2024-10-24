@@ -1,12 +1,12 @@
 #pragma once
 #include "SceneBase.h"
 
-class GameOver;
-class Scene_GameOver : public SceneBase
+class P1_Success;
+class Scene_P1_Success : public SceneBase
 {
 public:
-	Scene_GameOver();
-	~Scene_GameOver();
+	Scene_P1_Success();
+	~Scene_P1_Success();
 
 protected:
 	bool Initialize() override;
@@ -15,7 +15,7 @@ protected:
 	void Release() override;
 
 private:
-	GameOver* m_GameOverUI;
+	P1_Success* m_SuccessUI;
 	bool m_Start = false;
 	float m_FadeSpeed;
 };

@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "Score.h"
+#include "P1_Score.h"
 #include "DText.h"
 
 Score::Score()
@@ -28,8 +28,8 @@ void Score::Update(float dt)
     m_scoreText->SetString("Score : " + std::to_string((int)m_Score));
     m_Score += 1000 * dt;
 
-    if (m_Score >= 40000)
+    if (m_Score >= 20000)
     {
-        SM->ChangeScene("Success");
+        SM->ChangeScene("P1_Success");
     }
 }

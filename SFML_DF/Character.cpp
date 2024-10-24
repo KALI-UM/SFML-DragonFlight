@@ -74,7 +74,6 @@ int Character::RectCheck()
 
 		}
 	}
-
 	return rectcheck;
 }
 
