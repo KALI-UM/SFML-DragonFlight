@@ -38,9 +38,11 @@ bool Scene_Play2::Initialize()
 	m_Player = new Character();
 
 	m_Bullet.resize(100);
+	m_Score = new P2_Score();
 	for (int i = 0; i < m_Bullet.size(); ++i)
 	{
 		m_Bullet[i] = new Bullet();
+		m_Bullet[i]->getScore(m_Score);
 	}
 
 	m_Monsters.resize(5);
@@ -49,7 +51,6 @@ bool Scene_Play2::Initialize()
 		m_Monsters[i] = new Monster();
 	}
 
-	m_Score = new P2_Score();
 	m_Player->getMonster(&m_Monsters);
 
 	for (int i = 0; i < m_Bullet.size(); i++)
@@ -110,14 +111,12 @@ void Scene_Play2::Update(float dt)
 		}
 	}
 
-	/*m_Score->m_scoreText->SetString("Score : " + std::to_string((int)(m_Score->m_IncreaseScore)));
-	for (int i = 0; i < m_Bullet.size(); i++)
+	m_Score->m_scoreText->SetString("Score : " + std::to_string((int)(m_Score->m_IncreaseScore)));
+	
+	if (m_Score->m_IncreaseScore >= 3000)
 	{
-		if (m_Bullet[i]->BulletRectCheck() == true)
-		{
-			(m_Score->m_IncreaseScore) += 100;
-		}
-	}*/
+		SM->ChangeScene("P2_Success");
+	}
 }
 
 void Scene_Play2::Reset()
@@ -126,7 +125,6 @@ void Scene_Play2::Reset()
 	m_BackgoundSpeed = 200;
 	m_ResetPoint.y = m_BG_YTopPos;
 
-	m_SpawnPos = (Position2)(rand() % 4);
 	for (int i = 0; i < m_Monsters.size(); i++)
 	{
 		m_Monsters[i]->SetIsValid(true);
@@ -151,7 +149,6 @@ void Scene_Play2::Reset()
 
 void Scene_Play2::MonsterReset()
 {
-	m_SpawnPos = (Position2)(rand() % 4);
 	for (int i = 0; i < m_Monsters.size(); i++)
 	{
 		m_Monsters[i]->SetIsValid(true);

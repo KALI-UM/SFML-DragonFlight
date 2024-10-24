@@ -3,7 +3,7 @@
 #include "P2_Success.h"
 
 Scene_P2_Success::Scene_P2_Success()
-	:SceneBase("P2_Successe")
+	:SceneBase("P2_Success")
 {
 }
 

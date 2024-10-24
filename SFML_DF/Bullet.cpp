@@ -3,6 +3,7 @@
 #include "DSprite.h"
 #include "DRectangle.h"
 #include "Monster.h"
+#include "P2_Score.h"
 
 Bullet::Bullet()
 {
@@ -68,6 +69,7 @@ bool Bullet::BulletRectCheck()
 				rectcheck = true;
 				m_HitBox->SetOutlineColor(sf::Color::Red);
 				(*m_Enemy)[i]->SetIsValid(false);
+				m_Score->m_IncreaseScore += 100;
 				return rectcheck;
 			}
 		}
@@ -82,5 +84,10 @@ bool Bullet::BulletRectCheck()
 void Bullet::getMonster(std::vector<Monster*>* mons)
 {
 	m_Enemy = mons;
+}
+
+void Bullet::getScore(P2_Score* score)
+{
+	m_Score = score;
 }
 
