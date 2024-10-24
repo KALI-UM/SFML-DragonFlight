@@ -66,4 +66,3 @@ void P1_GameOver::Update(float dt)
         SM->ChangeScene("Lobby");
     }
 }
-

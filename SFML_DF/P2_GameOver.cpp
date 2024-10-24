@@ -20,6 +20,18 @@ bool P2_GameOver::Initialize()
     m_GameOverText[2] = new DText("resource/CookieRun Black.ttf", "Go Main(M)", 50, DrawType::UI);
     m_GameOverRect = new DRectangle({ 0,0 }, { 300, 400 }, sf::Color::White, 1, sf::Color::White, DrawType::UI);
 
+    SetDrawable(m_GameOverBackground);
+    SetDrawable(m_GameOverText[0]);
+    SetDrawable(m_GameOverText[1]);
+    SetDrawable(m_GameOverText[2]);
+    SetDrawable(m_GameOverRect);
+
+    m_GameOverBackground->SetPriority(0);
+    m_GameOverRect->SetPriority(1);
+    m_GameOverText[0]->SetPriority(2);
+    m_GameOverText[1]->SetPriority(2);
+    m_GameOverText[2]->SetPriority(2);
+
     Reset();
 
 	return false;
@@ -54,4 +66,3 @@ void P2_GameOver::Update(float dt)
         SM->ChangeScene("Lobby");
     }
 }
-

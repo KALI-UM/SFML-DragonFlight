@@ -162,12 +162,12 @@ void Scene_Play1::MonsterReset()
 	{
 		if (i == (int)m_SpawnPos || i == (int)m_SpawnPos + 1)
 		{
-			std::cout << i << "¹øÂ° ¸ó½ºÅÍ ¾È½ºÆù\n";
+			std::cout << i << "ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½È½ï¿½ï¿½ï¿½\n";
 			m_Monsters[i]->SetIsValid(false);
 		}
 		else
 		{
-			std::cout << i << "¹øÂ° ¸ó½ºÅÍ ½ºÆù\n";
+			std::cout << i << "ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½\n";
 			m_Monsters[i]->SetIsValid(true);
 			m_Monsters[i]->Set(m_MonsterSpeed, { m_XPosSet[i], m_YPos - 20 }, { 0.6f, 0.6f });
 		}

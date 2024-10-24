@@ -46,6 +46,8 @@ void Monster::Set(float speed, const sf::Vector2f& pos, const sf::Vector2f& scal
 	m_speed = speed;
 	m_monster->Transform()->setPosition(pos);
 	m_monster->Transform()->setScale(scale);
+	m_HitBox->SetFloatRect(m_monster->GetFloatRect());
+
 	if (origincenter)
 		m_monster->SetOriginCenter();
 }
