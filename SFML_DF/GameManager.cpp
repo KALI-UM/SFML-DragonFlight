@@ -3,10 +3,12 @@
 #include "SFML/Window.hpp"
 #include "Scene_Test.h"
 #include "Scene_Lobby.h"
-#include "Scene_GameOver.h"
+#include "Scene_P1_GameOver.h"
+#include "Scene_P2_GameOver.h"
 #include "Scene_Play1.h"
 #include "Scene_Play2.h"
-#include "Scene_Success.h"
+#include "Scene_P1_Success.h"
+#include "Scene_P2_Success.h"
 
 GameManager::GameManager()
 	:m_MainWindow(nullptr),
@@ -49,17 +51,21 @@ bool GameManager::Initialize(sf::RenderWindow* window)
 
 	Scene_Lobby* lobby = new Scene_Lobby();
 	//Scene_Test* test = new Scene_Test();
-	Scene_GameOver* over = new Scene_GameOver();
+	Scene_P1_GameOver* over1 = new Scene_P1_GameOver();
+	Scene_P2_GameOver* over2 = new Scene_P2_GameOver();
 	Scene_Play1* play1 = new Scene_Play1();
 	Scene_Play2* play2 = new Scene_Play2();
-	Scene_Success* suc = new Scene_Success();
+	Scene_P1_Success* suc1 = new Scene_P1_Success();
+	Scene_P2_Success* suc2 = new Scene_P2_Success();
 	SM->PushScene(lobby);
 	//SM->PushScene(test);
-	SM->PushScene(over);
+	SM->PushScene(over1);
+	SM->PushScene(over2);
 	SM->PushScene(play1);
 	SM->PushScene(play2);
-	SM->PushScene(suc);
-	SM->SetCurrentScene(play2->GetName());
+	SM->PushScene(suc1);
+	SM->PushScene(suc2);
+	SM->SetCurrentScene(suc2->GetName());
 	return success;
 }
 

@@ -2,6 +2,7 @@
 #include "Bullet.h"
 #include "DSprite.h"
 #include "DRectangle.h"
+#include "Monster.h"
 
 Bullet::Bullet()
 {
@@ -15,7 +16,7 @@ bool Bullet::Initialize()
 {
 	m_Bullet = new DSprite("character/bullet_01.png");
 	SetDrawable(m_Bullet);
-	m_HitBox = new DRectangle(sf::FloatRect(m_Bullet->GetFloatRect()), sf::Color::Magenta, 1, sf::Color::Transparent, DrawType::Debug);
+	m_HitBox = new DRectangle(sf::FloatRect(m_Bullet->GetFloatRect()), sf::Color::Green, 1, sf::Color::Transparent, DrawType::Debug);
 	SetDrawable(m_HitBox);
 
 	Reset();
@@ -25,7 +26,7 @@ bool Bullet::Initialize()
 void Bullet::Reset()
 {
 	m_Speed = 200;
-	m_HitBox->SetOriginCenter();
+	m_Bullet->SetOriginCenter();
 	m_HitBox->SetFloatRect(m_Bullet->GetFloatRect());
 
 	SetIsValid(false);
@@ -34,14 +35,18 @@ void Bullet::Reset()
 void Bullet::Update(float dt)
 {
 	m_Bullet->Transform()->setPosition(m_Bullet->Transform()->getPosition().x, m_Bullet->Transform()->getPosition().y - m_Speed * dt);
-	m_HitBox->SetOriginCenter();
-	m_HitBox->SetFloatRect(m_Bullet->GetFloatRect());
-	//m_HitBox->SetFloatRect(sf::FloatRect(m_Bullet.);
-	m_HitBox->Transform()->setScale(0.6f, 1.f);
-	
+	sf::Vector2f p(m_Bullet->Transform()->getPosition().x - 16, m_Bullet->Transform()->getPosition().y - 22);
+	m_HitBox->SetFloatRect(sf::FloatRect(p.x, p.y, 32, 38));
+
+
 	if (m_Bullet->Transform()->getPosition().y < -20)
 	{
 		Reset();
+	}
+
+	if (BulletRectCheck() == true)
+	{
+		SetIsValid(false);
 	}
 }
 
@@ -53,5 +58,29 @@ void Bullet::Shoot(const sf::Vector2f& shootPoint)
 
 bool Bullet::BulletRectCheck()
 {
+	bool rectcheck = false;
+	for (int i = 0; i < m_Enemy->size(); i++)
+	{
+		if ((*m_Enemy)[i]->GetIsValid())
+		{
+			if (m_Bullet->GetFloatRect().intersects((*m_Enemy)[i]->m_monster->GetFloatRect()))
+			{
+				rectcheck = true;
+				m_HitBox->SetOutlineColor(sf::Color::Red);
+				(*m_Enemy)[i]->SetIsValid(false);
+				return rectcheck;
+			}
+		}
+	}
+	if (!rectcheck)
+	{
+		m_HitBox->SetOutlineColor(sf::Color::Green);
+	}
 	return false;
 }
+
+void Bullet::getMonster(std::vector<Monster*>* mons)
+{
+	m_Enemy = mons;
+}
+

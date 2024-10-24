@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="AABB.cpp" />
-    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="P1_Background.cpp" />
     <ClCompile Include="Background_Lobby.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="DAnimation.cpp" />
@@ -17,7 +16,7 @@
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="P1_GameOver.cpp" />
     <ClCompile Include="GameStart.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
@@ -25,21 +24,25 @@
     <ClCompile Include="MouseCursor.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="Scene_GameOver.cpp" />
+    <ClCompile Include="Scene_P1_GameOver.cpp" />
     <ClCompile Include="Scene_Lobby.cpp" />
     <ClCompile Include="Scene_Test.cpp" />
-    <ClCompile Include="Score.cpp" />
+    <ClCompile Include="P1_Score.cpp" />
     <ClCompile Include="SoundObject.cpp" />
     <ClCompile Include="Scene_Play1.cpp" />
     <ClCompile Include="Scene_Play2.cpp" />
     <ClCompile Include="P2_Background.cpp" />
-    <ClCompile Include="Success.cpp" />
-    <ClCompile Include="Scene_Success.cpp" />
+    <ClCompile Include="P1_Success.cpp" />
+    <ClCompile Include="Scene_P1_Success.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="P2_Success.cpp" />
+    <ClCompile Include="P2_GameOver.cpp" />
+    <ClCompile Include="Scene_P2_Success.cpp" />
+    <ClCompile Include="Scene_P2_GameOver.cpp" />
+    <ClCompile Include="P2_Score.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AABB.h" />
-    <ClInclude Include="Background.h" />
+    <ClInclude Include="P1_Background.h" />
     <ClInclude Include="Background_Lobby.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="DAnimation.h" />
@@ -55,7 +58,7 @@
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GameOver.h" />
+    <ClInclude Include="P1_GameOver.h" />
     <ClInclude Include="GameStart.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Monster.h" />
@@ -64,17 +67,22 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Scene_GameOver.h" />
+    <ClInclude Include="Scene_P1_GameOver.h" />
     <ClInclude Include="Scene_Lobby.h" />
     <ClInclude Include="Scene_Test.h" />
-    <ClInclude Include="Score.h" />
+    <ClInclude Include="P1_Score.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SoundObject.h" />
     <ClInclude Include="Scene_Play1.h" />
     <ClInclude Include="Scene_Play2.h" />
     <ClInclude Include="P2_Background.h" />
-    <ClInclude Include="Success.h" />
-    <ClInclude Include="Scene_Success.h" />
+    <ClInclude Include="P1_Success.h" />
+    <ClInclude Include="Scene_P1_Success.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="P2_Success.h" />
+    <ClInclude Include="P2_GameOver.h" />
+    <ClInclude Include="Scene_P2_Success.h" />
+    <ClInclude Include="Scene_P2_GameOver.h" />
+    <ClInclude Include="P2_Score.h" />
   </ItemGroup>
 </Project>

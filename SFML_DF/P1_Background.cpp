@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "Background.h"
+#include "P1_Background.h"
 #include "DSprite.h"
 
 float P1_Backgound::m_XPos = 540 / 2;

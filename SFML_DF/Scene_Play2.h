@@ -10,10 +10,10 @@ enum class Position2
 };
 class Character;
 class Monster;
-class Score;
 class P2_Background;
 class GameStart;
 class Bullet;
+class P2_Score;
 
 class Scene_Play2
 	:public SceneBase
@@ -29,7 +29,7 @@ public:
 
 	Character* m_Player;
 	std::vector<Monster*> m_Monsters;
-	Score* m_Score;
+	P2_Score* m_Score;
 	P2_Background* m_P2_Background;
 	std::vector<Bullet*> m_Bullet;
 

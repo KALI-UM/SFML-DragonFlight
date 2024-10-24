@@ -6,11 +6,11 @@ class DRectangle;
 class DSprite;
 class Character;
 
-class Success : public GameObject
+class P1_Success : public GameObject
 {
 public:
-	Success();
-	~Success();
+	P1_Success();
+	~P1_Success();
 
 	bool Initialize();
 	void Reset();

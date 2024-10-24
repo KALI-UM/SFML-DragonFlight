@@ -73,7 +73,6 @@ bool Character::RectCheck()
 	if (!rectcheck)
 	{
 		m_HitBox->SetOutlineColor(sf::Color::Green);
-		rectcheck = false;
 	}
 	return false;
 }

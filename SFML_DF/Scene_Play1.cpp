@@ -9,8 +9,8 @@
 #include "DLine.h"
 #include "Character.h"
 #include "Monster.h"
-#include "Score.h"
-#include "Background.h"
+#include "P1_Score.h"
+#include "P1_Background.h"
 
 float Scene_Play1::m_XPosSet[5] = { 55, 163, 271, 379, 487 };
 float Scene_Play1::m_YPos;
@@ -76,7 +76,7 @@ void Scene_Play1::Update(float dt)
 		}
 		m_Background->SetStopBackground();
 
-		SM->ChangeScene("GameOver");
+		SM->ChangeScene("P1_GameOver");
 	}
 }
 
@@ -116,7 +116,7 @@ void Scene_Play1::MonsterReset()
 		{
 			std::cout << i << "번째 몬스터 스폰\n";
 			m_Monsters[i]->SetIsValid(true);
-			m_Monsters[i]->Set(m_MonsterSpeed, { m_XPosSet[i], m_YPos }, { 0.6f, 0.6f });
+			m_Monsters[i]->Set(m_MonsterSpeed, { m_XPosSet[i], m_YPos - 20 }, { 0.6f, 0.6f });
 		}
 	}
 	m_ResetPoint.y = m_YPos;

@@ -5,11 +5,12 @@ class DText;
 class DRectangle;
 class DSprite;
 class Character;
-class GameOver : public GameObject
+
+class P2_Success : public GameObject
 {
 public:
-	GameOver();
-	~GameOver();
+	P2_Success();
+	~P2_Success();
 
 	bool Initialize();
 	void Reset();
@@ -20,9 +21,9 @@ public:
 	Character* m_Player;
 
 protected:
-	DSprite* m_GameOverBackground;
-	DText* m_GameOverText[3];
-	DRectangle* m_GameOverRect;
+	DSprite* m_SuccessBackground;
+	DText* m_SuccessText[3];
+	DRectangle* m_SuccessRect;
 
 	float m_FadeOutSpeed = -1;
 	float m_CurrvColorValue;
