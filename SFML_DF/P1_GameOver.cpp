@@ -66,8 +66,3 @@ void P1_GameOver::Update(float dt)
         SM->ChangeScene("Lobby");
     }
 }
-
-void P1_GameOver::FadeOutBackGround(float speed)
-{
-    m_FadeOutSpeed = speed;
-}
