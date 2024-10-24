@@ -56,7 +56,7 @@ void GameOver::Update(float dt)
 {
     if (IM->GetKeyDown(sf::Keyboard::R))
     {
-        SM->ChangeScene("Test");
+        SM->ChangeScene("Play1");
     }
 
     if (IM->GetKeyDown(sf::Keyboard::M))

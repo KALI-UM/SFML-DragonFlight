@@ -4,6 +4,9 @@
 #include "Scene_Test.h"
 #include "Scene_Lobby.h"
 #include "Scene_GameOver.h"
+#include "Scene_Play1.h"
+#include "Scene_Play2.h"
+#include "Scene_Success.h"
 
 GameManager::GameManager()
 	:m_MainWindow(nullptr),
@@ -45,12 +48,18 @@ bool GameManager::Initialize(sf::RenderWindow* window)
 	m_Volume = 0.8f;
 
 	Scene_Lobby* lobby = new Scene_Lobby();
-	Scene_Test* test = new Scene_Test();
+	//Scene_Test* test = new Scene_Test();
 	Scene_GameOver* over = new Scene_GameOver();
+	Scene_Play1* play1 = new Scene_Play1();
+	Scene_Play2* play2 = new Scene_Play2();
+	Scene_Success* suc = new Scene_Success();
 	SM->PushScene(lobby);
-	SM->PushScene(test);
+	//SM->PushScene(test);
 	SM->PushScene(over);
-	SM->SetCurrentScene(lobby->GetName());
+	SM->PushScene(play1);
+	SM->PushScene(play2);
+	SM->PushScene(suc);
+	SM->SetCurrentScene(play2->GetName());
 	return success;
 }
 
