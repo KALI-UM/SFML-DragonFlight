@@ -2,7 +2,7 @@
 #include "Scene_Lobby.h"
 #include "Background_Lobby.h"
 #include "MouseCursor.h"
-#include "DieEffect.h"
+#include "DustEffect.h"
 #include "SoundObject.h"
 #include "GameStart.h"
 
@@ -19,19 +19,19 @@ bool Scene_Lobby::Initialize()
 {
 	m_LobbyImage = new Background_Lobby();
 	m_SoundObject = new SoundObject();
-	m_GameObjects.push_back(m_LobbyImage);
 	m_GameObjects.push_back(m_SoundObject);
 	m_GameObjects.push_back(new MouseCursor());
 	m_Effects.resize(5);
 	for (auto& eff : m_Effects)
 	{
-		eff = new DieEffect();
+		eff = new DustEffect();
 		m_GameObjects.push_back(eff);
 	}
-	return true;
-    m_GameStart = new GameStart();
-    m_GameObjects.push_back(m_GameStart);
-    return false;
+
+	m_GameStart = new GameStart();
+	m_GameObjects.push_back(m_LobbyImage);
+	m_GameObjects.push_back(m_GameStart);
+	return false;
 }
 
 void Scene_Lobby::Reset()
@@ -50,7 +50,7 @@ void Scene_Lobby::Update(float dt)
 		{
 			if (!eff->GetIsValid())
 			{
-				eff->Effect({ (float)MOUSEPOS.x,(float)MOUSEPOS.y });
+				eff->Effect(1.f, { (float)MOUSEPOS.x,(float)MOUSEPOS.y }, 10.f);
 				break;
 			}
 		}

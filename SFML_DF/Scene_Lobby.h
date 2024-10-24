@@ -2,7 +2,7 @@
 #include "SceneBase.h"
 class Background_Lobby;
 class SoundObject;
-class DieEffect;
+class DustEffect;
 class GameStart;
 class Scene_Lobby :
     public SceneBase
@@ -21,7 +21,7 @@ protected:
 private:
 	Background_Lobby* m_LobbyImage;
 	SoundObject* m_SoundObject;
-	std::vector< DieEffect*> m_Effects;
+	std::vector< DustEffect*> m_Effects;
 
 	GameStart* m_GameStart;
 	bool m_Start = false;

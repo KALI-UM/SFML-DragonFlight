@@ -73,6 +73,11 @@ void DSprite::SetTexture(sf::Texture* tex)
 	}
 }
 
+void DSprite::SetTexture(const std::string& filepath)
+{
+	SetTexture(ResourceManager<sf::Texture>::GetInstance()->GetByFilepath(filepath));
+}
+
 sf::FloatRect DSprite::GetFloatRect() const
 {
 	return m_Sprite.getGlobalBounds();
