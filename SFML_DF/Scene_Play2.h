@@ -14,6 +14,7 @@ class P2_Background;
 class GameStart;
 class Bullet;
 class P2_Score;
+class DustEffect;
 
 class Scene_Play2
 	:public SceneBase
@@ -46,5 +47,6 @@ private:
 	static float m_BG_YPos;
 	static float m_BG_YTopPos;
 	static float m_SpeedVariable;
+	std::vector<DustEffect*> m_Effects;
 };
 

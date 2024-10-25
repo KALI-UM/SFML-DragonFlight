@@ -21,6 +21,8 @@ void Score::Reset()
 {
     m_scoreText->SetFillColor(sf::Color::White);
     m_scoreText->Transform()->setPosition(0.f, 0.f);
+    m_scoreText->SetOutlineColor(sf::Color::Black);
+    m_scoreText->SetOutlineThickness(2);
 }
 
 void Score::Update(float dt)

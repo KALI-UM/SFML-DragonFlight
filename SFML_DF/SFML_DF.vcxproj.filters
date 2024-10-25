@@ -63,9 +63,6 @@
     <ClCompile Include="DAnimation.cpp">
       <Filter>GameEngine\Drawable</Filter>
     </ClCompile>
-    <ClCompile Include="DLine.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -120,24 +117,6 @@
     <ClCompile Include="P2_Success.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene_P1_GameOver.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene_P2_GameOver.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene_P2_Success.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene_Play1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene_Play2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene_P1_Success.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="P1_Score.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -149,6 +128,33 @@
     </ClCompile>
     <ClCompile Include="SoundPlayer.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Play1.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Play2.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_P1_GameOver.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_P1_Success.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_P2_GameOver.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_P2_Success.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Loading.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DLine.cpp">
+      <Filter>GameEngine\Drawable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -196,9 +202,6 @@
     </ClInclude>
     <ClInclude Include="DText.h">
       <Filter>GameEngine\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="DLine.h">
-      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>헤더 파일</Filter>
@@ -252,24 +255,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="P2_Success.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_P1_GameOver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_P2_GameOver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_P2_Success.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_Play1.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_Play2.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_P1_Success.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="P1_Score.h">

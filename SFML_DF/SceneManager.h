@@ -2,7 +2,7 @@
 #include "Singleton.h"
 
 class SceneBase;
-
+class SoundPlayer;
 class SceneManager :
 	public Singleton <SceneManager>
 {
@@ -18,6 +18,7 @@ public:
 	void SetCurrentScene(const std::string& name);
 	bool ChangeScene(const std::string& name);
 	void PushScene(SceneBase* scene);
+	SoundPlayer* GetSoundPlayer();
 private:
 	void SetCurrentScene(SceneBase* scene);
 
@@ -25,6 +26,7 @@ private:
 	SceneBase* m_CurrScene;
 	SceneBase* m_WantsTo;
 	std::unordered_map<std::string, SceneBase*> m_Scenes;
+	SoundPlayer* m_CurrSoundPlayer;
 
 	SceneBase* m_EmptyScene;
 };

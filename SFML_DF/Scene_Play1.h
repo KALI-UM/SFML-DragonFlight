@@ -51,6 +51,6 @@ private:
 	float m_StartPause;
 	float m_EndTime;
 	float m_EndPause;
-	std::vector< DustEffect*> m_Effects;
+	std::vector<DustEffect*> m_Effects;
 };
 

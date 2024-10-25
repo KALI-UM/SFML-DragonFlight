@@ -5,6 +5,7 @@
 #include "DustEffect.h"
 #include "SoundPlayer.h"
 #include "GameStart.h"
+#include "Button.h"
 
 Scene_Lobby::Scene_Lobby()
 	:SceneBase("Lobby")
@@ -29,6 +30,7 @@ bool Scene_Lobby::Initialize()
 
 	m_GameStart = new GameStart();
 	m_GameObjects.push_back(m_GameStart);
+
 	return false;
 }
 
@@ -46,7 +48,6 @@ void Scene_Lobby::Update(float dt)
 	if (IM->GetMouseDown(sf::Mouse::Left) || IM->GetKeyDown(sf::Keyboard::Enter))
 	{
 		m_LobbyImage->FadeOutBackGround(m_FadeSpeed);
-		m_SoundPlayer->PlayEffect("sound/ButtonClick.wav");
 		m_SoundPlayer->FadeOutBGM("sound/my_friend_dragon.mp3", 3);
 		for (auto& eff : m_Effects)
 		{

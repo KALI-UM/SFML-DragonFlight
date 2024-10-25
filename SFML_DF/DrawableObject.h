@@ -91,5 +91,5 @@ protected:
 	sf::Transformable* m_Transform;
 	bool					m_IsValid;
 	std::string				m_Name;
-	float					m_Priority;
+	float					m_Priority;			//m_Priority가 클수록 나중에 그려진다.
 };

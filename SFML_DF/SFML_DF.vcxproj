@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="P1_Background.cpp" />
     <ClCompile Include="Background_Lobby.cpp" />
     <ClCompile Include="Bullet.cpp" />
@@ -180,6 +181,7 @@
     </ClCompile>
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Scene_Loading.cpp" />
     <ClCompile Include="Scene_P1_GameOver.cpp" />
     <ClCompile Include="Scene_Lobby.cpp" />
     <ClCompile Include="Scene_P2_GameOver.cpp" />
@@ -194,6 +196,7 @@
     <ClCompile Include="SoundPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.h" />
     <ClInclude Include="P1_Background.h" />
     <ClInclude Include="Background_Lobby.h" />
     <ClInclude Include="Bullet.h" />
@@ -227,6 +230,7 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Scene_Loading.h" />
     <ClInclude Include="Scene_P1_GameOver.h" />
     <ClInclude Include="Scene_Lobby.h" />
     <ClInclude Include="Scene_P2_GameOver.h" />

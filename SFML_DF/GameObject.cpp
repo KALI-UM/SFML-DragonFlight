@@ -49,6 +49,11 @@ void GameObject::RESET()
 void GameObject::UPDATE(float dt)
 {
 	Update(dt);
+	
+	for (auto& drawable : m_Drawable)
+	{
+		drawable->Update(dt);
+	}
 }
 
 void GameObject::RELEASE()
