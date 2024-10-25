@@ -6,12 +6,6 @@ namespace sf
 	class Sound;
 }
 
-enum class SoundEffect
-{
-	Click,
-	NextScene,
-};
-
 class SoundObject;
 class SoundPlayer :
     public GameObject

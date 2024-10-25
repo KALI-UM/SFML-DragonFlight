@@ -129,6 +129,7 @@ void Scene_Play1::Update(float dt)
 
 void Scene_Play1::Reset()
 {
+	m_Score->m_Score = 0;
 	m_StartTime = -1;
 	m_StartPause = 2.5f;
 	m_EndTime = -1;

@@ -135,6 +135,7 @@ void Scene_Play2::Update(float dt)
 
 void Scene_Play2::Reset()
 {
+	m_Score->m_IncreaseScore = 0;
 	m_MonsterSpeed = 200;
 	m_BackgoundSpeed = 200;
 	m_ResetPoint.y = m_BG_YTopPos;
