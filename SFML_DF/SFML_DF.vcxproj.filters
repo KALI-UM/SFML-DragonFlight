@@ -266,32 +266,5 @@
     <ClInclude Include="SoundPlayer.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene_P1_GameOver.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_P1_Success.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_P2_GameOver.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_P2_Success.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_Play1.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_Play2.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_Loading.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="DLine.h">
-      <Filter>GameEngine\Drawable</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
